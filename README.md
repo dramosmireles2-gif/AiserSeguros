@@ -1,53 +1,27 @@
 # AISER Seguros y Fianzas
 
-Sitio web oficial de **AISER Seguros y Fianzas**, correduría integral de seguros y riesgos ubicada en Reynosa, Tamaulipas.
+Sitio web oficial de **AISER Seguros y Fianzas**, correduría integral de seguros y riesgos en Reynosa, Tamaulipas.
 
-## Stack
+## Tecnología
 
-- [Next.js 16](https://nextjs.org/) — App Router
-- [Tailwind CSS v4](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Lucide React](https://lucide.dev/) — Iconos
+HTML + CSS + JavaScript puro. Sin dependencias, sin frameworks. Listo para publicar en GitHub Pages.
 
 ## Estructura
 
 ```
-src/
-├── app/
-│   ├── layout.tsx        # Layout global + metadata SEO
-│   ├── page.tsx          # Página principal
-│   └── globals.css       # Estilos globales y animaciones
-└── components/
-    ├── Navbar.tsx         # Navegación fija con efecto scroll
-    ├── Hero.tsx           # Sección principal con CTAs
-    ├── Products.tsx       # Catálogo de 8 productos de seguro
-    ├── WhyUs.tsx          # Razones para elegir AISER
-    ├── Testimonials.tsx   # Testimonios de clientes
-    ├── QuoteForm.tsx      # Formulario de cotización
-    ├── Footer.tsx         # Pie de página con contacto
-    └── WhatsAppButton.tsx # Botón flotante de WhatsApp
+index.html      ← página principal
+css/style.css   ← todos los estilos
+js/main.js      ← navbar, formulario, animaciones
 ```
 
-## Desarrollo local
+## Publicar en GitHub Pages
 
-```bash
-npm install
-npm run dev
-```
-
-Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
-
-## Despliegue
-
-El proyecto está listo para desplegarse en [Vercel](https://vercel.com). Conecta el repositorio y se despliega automáticamente en cada push a `main`.
-
-```bash
-npm run build   # Verificar build de producción
-```
+1. Ve a **Settings → Pages** en este repositorio
+2. En *Source* selecciona la rama `main` y carpeta `/ (root)`
+3. Guarda — en minutos el sitio estará en línea
 
 ## Contacto
 
 **AISER Seguros y Fianzas**  
-Blvd. Lázaro Cárdenas 720, Col. Anzalduas  
-Reynosa, Tamaulipas, México  
+Blvd. Lázaro Cárdenas 720, Col. Anzalduas, Reynosa, Tamaulipas  
 Tel: (899) 925-02-35
