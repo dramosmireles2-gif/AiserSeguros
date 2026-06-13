@@ -3,13 +3,15 @@ const prevBtn  = document.getElementById('prevBtn');
 const nextBtn  = document.getElementById('nextBtn');
 const dotsWrap = document.getElementById('carouselDots');
 
+
 if (!track) { /* not on homepage */ }
 else {
   const cards    = Array.from(track.children);
   let current    = 0;
 
   function visibleCount() {
-    if (window.innerWidth >= 1100) return 5;
+    if (window.innerWidth >= 1400) return 4;
+    if (window.innerWidth >= 1100) return 4;
     if (window.innerWidth >= 768)  return 3;
     if (window.innerWidth >= 480)  return 2;
     return 1;
@@ -37,15 +39,15 @@ else {
     current = Math.max(0, Math.min(index, totalSlides() - 1));
     const offset = current * visibleCount() * cardWidth();
     track.style.transform = `translateX(-${offset}px)`;
-    prevBtn.disabled = current === 0;
-    nextBtn.disabled = current >= totalSlides() - 1;
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current >= totalSlides() - 1;
     dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
       d.classList.toggle('active', i === current);
     });
   }
 
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
 
   // Touch/swipe support
   let startX = 0;
@@ -54,6 +56,18 @@ else {
     const diff = startX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
   });
+
+  // Autoplay
+  function startAutoplay() {
+    return setInterval(() => {
+      goTo(current >= totalSlides() - 1 ? 0 : current + 1);
+    }, 3000);
+  }
+  let autoplay = startAutoplay();
+  track.addEventListener('mouseenter', () => clearInterval(autoplay));
+  track.addEventListener('mouseleave', () => { autoplay = startAutoplay(); });
+  track.addEventListener('touchstart', () => clearInterval(autoplay), { passive: true });
+  track.addEventListener('touchend', () => { autoplay = startAutoplay(); });
 
   // Init + resize
   buildDots();

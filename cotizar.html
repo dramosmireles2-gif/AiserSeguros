@@ -2,14 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="Logo AISER sin fondo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cotizar | AISER Seguros y Fianzas</title>
+  <title>Cotizar | AISER Seguros</title>
   <meta name="description" content="Solicita tu cotización de seguro gratis con AISER Seguros en Reynosa, Tamaulipas." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/inner-page.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -17,7 +19,7 @@
   <header class="navbar scrolled" id="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="logo">
-        <img src="Logo aiser.png" alt="AISER Seguros y Fianzas" class="logo-img" />
+        <img src="Logo AISER sin fondo.png" alt="AISER Seguros" class="logo-img" />
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Inicio</a>
@@ -27,11 +29,11 @@
         <a href="contacto.html">Contacto</a>
       </nav>
       <div class="nav-cta">
-        <a href="tel:8999250235" class="nav-phone">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="https://wa.me/528999250235" target="_blank" rel="noopener" class="nav-phone">
+          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           (899) 925-02-35
         </a>
-        <a href="cotizar.html" class="btn-primary">Cotizar gratis</a>
+        <a href="servicios.html" class="btn-primary">Cotizar</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -45,7 +47,7 @@
     <div class="container page-hero-content">
       <span class="section-tag tag-light">Sin costo, sin compromiso</span>
       <h1>Solicita tu <span class="gradient-text">cotización</span></h1>
-      <p>Llena el formulario y un asesor te contactará en menos de 24 horas con las mejores opciones para ti.</p>
+      <p>Llena el formulario y un asesor te cotizará en minutos con las mejores opciones para ti.</p>
     </div>
   </section>
 
@@ -68,11 +70,11 @@
           </div>
           <div class="contact-item">
             <div class="contact-icon-wrap" style="background:#25D366">
-              <svg width="20" height="20" viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.476 2.027 7.786L0 32l8.432-2.004A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.273 19.378c-.398-.199-2.355-1.163-2.72-1.295-.365-.133-.63-.199-.896.2-.265.398-1.03 1.294-1.263 1.561-.233.266-.465.299-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.759-.233-.398-.025-.614.175-.812.18-.179.398-.465.597-.698.2-.232.266-.398.398-.664.133-.265.067-.498-.033-.698-.1-.199-.896-2.161-1.228-2.959-.323-.776-.65-.671-.896-.683l-.763-.013c-.266 0-.698.1-1.063.498-.365.398-1.395 1.362-1.395 3.323s1.428 3.854 1.628 4.12c.199.265 2.81 4.289 6.81 6.018.952.41 1.695.656 2.274.839.955.304 1.824.261 2.511.158.766-.114 2.355-.963 2.688-1.893.332-.93.332-1.727.232-1.893-.1-.166-.365-.265-.763-.465z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
             <div>
               <span class="contact-label">WhatsApp</span>
-              <a href="https://wa.me/528992181217" target="_blank">(899) 218-12-17</a>
+              <a href="https://wa.me/528999250235" target="_blank">(899) 925-02-35</a>
             </div>
           </div>
           <div class="contact-item">
@@ -100,87 +102,162 @@
           </div>
         </div>
 
-        <!-- Formulario -->
-        <div class="form-card">
-          <form id="quoteForm" class="quote-form">
-            <div class="form-group">
-              <label for="fecha">Fecha</label>
-              <input type="date" id="fecha" name="fecha" />
+        <!-- Formulario con 3 tabs -->
+        <div class="form-card" style="padding-top:0; overflow:hidden;">
+
+          <!-- Tabs -->
+          <div class="cotizar-tabs">
+            <button class="cotizar-tab active" data-tab="completo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Formulario completo
+            </button>
+            <button class="cotizar-tab" data-tab="foto">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Foto rápida
+            </button>
+            <button class="cotizar-tab" data-tab="whatsapp">
+              <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp directo
+            </button>
+          </div>
+
+          <!-- TAB 1: Formulario completo -->
+          <div id="tab-completo" class="tab-panel" style="padding:28px 32px;">
+            <form id="quoteForm" class="quote-form">
+              <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+              </div>
+              <div class="form-group">
+                <label for="cp">Código postal</label>
+                <input type="text" id="cp" name="cp" placeholder="88000" />
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="(899) 000-0000" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" />
+              </div>
+              <div class="form-group">
+                <label for="tipo">Tipo de vehículo</label>
+                <input type="text" id="tipo" name="tipo" placeholder="Ej. Auto, Pickup, Moto…" />
+              </div>
+              <div class="form-group">
+                <label for="modelo">Año</label>
+                <input type="number" id="modelo" name="año" placeholder="Ej. 2022" min="1990" max="2026" />
+              </div>
+              <div class="form-group">
+                <label for="ocupantes">Capacidad de ocupantes</label>
+                <input type="text" id="ocupantes" name="ocupantes" placeholder="Ej. 5" />
+              </div>
+              <div class="form-group full">
+                <label for="marca">¿Mexicana 100%? (Marca, submarca, versión, tipo)</label>
+                <input type="text" id="marca" name="marca" placeholder="Ej. Chevrolet Aveo LT Manual" />
+              </div>
+              <div class="form-group full">
+                <label for="serie">¿Regularizada o nacional? (No. de serie)</label>
+                <input type="text" id="serie" name="serie" placeholder="Número de serie del vehículo" />
+              </div>
+              <div class="form-group full">
+                <label for="adaptacion">¿Tiene tumba burros o alguna otra adaptación?</label>
+                <input type="text" id="adaptacion" name="adaptacion" placeholder="Describe cualquier adaptación" />
+              </div>
+              <div class="form-group">
+                <label for="paquete">Paquete a cotizar *</label>
+                <select id="paquete" name="paquete" required>
+                  <option value="">Selecciona un paquete</option>
+                  <option>Responsabilidad Civil</option>
+                  <option>Limitada</option>
+                  <option>Amplia</option>
+                  <option>Amplia Plus</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pago">Forma de pago *</label>
+                <select id="pago" name="pago" required>
+                  <option value="">Selecciona forma de pago</option>
+                  <option>Contado</option>
+                  <option>Semestral</option>
+                  <option>Trimestral</option>
+                  <option>Mensual</option>
+                </select>
+              </div>
+              <p class="form-note full">*El paquete de Responsabilidad Civil solo puede pagarse de Contado</p>
+              <div class="form-footer full">
+                <button type="submit" id="btnQuoteSubmit" class="btn-primary btn-lg" style="width:100%">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  Enviar solicitud
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- TAB 2: Foto rápida -->
+          <div id="tab-foto" class="tab-panel hidden" style="padding:28px 32px;">
+            <p style="color:#64748b; font-size:14px; margin:0 0 20px; line-height:1.6;">Sube la foto de tu tarjeta de circulación y déjanos tus datos. Un asesor te contactará en menos de 24 h.</p>
+            <form id="quickForm" class="quote-form">
+              <div class="form-group full">
+                <label>Foto de tarjeta de circulación *</label>
+                <label for="q-foto" class="file-drop-zone" id="fileDrop">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span id="fileLabel">Haz clic o arrastra la imagen aquí</span>
+                  <span style="font-size:12px; color:#94a3b8;">JPG, PNG o PDF · máx. 5 MB</span>
+                </label>
+                <input type="file" id="q-foto" name="tarjeta_circulacion" accept="image/*,.pdf" style="display:none" />
+              </div>
+              <div class="form-group">
+                <label for="q-nombre">Nombre completo *</label>
+                <input type="text" id="q-nombre" name="nombre" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label for="q-telefono">Teléfono *</label>
+                <input type="tel" id="q-telefono" name="telefono" placeholder="(899) 000-0000" required />
+              </div>
+              <div class="form-group full">
+                <label for="q-email">Correo electrónico</label>
+                <input type="email" id="q-email" name="email" placeholder="correo@ejemplo.com" />
+              </div>
+              <input type="hidden" name="tipo" value="Cotización rápida por foto" />
+              <input type="hidden" name="paquete" value="Por definir con asesor" />
+              <div class="form-footer full" style="display:flex; gap:12px; flex-wrap:wrap;">
+                <button type="submit" id="btnQuickSubmit" class="btn-primary btn-lg" style="flex:1; min-width:180px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  Enviar por correo
+                </button>
+                <button type="button" id="btnQuickWA" class="btn-wa-form btn-lg" style="flex:1; min-width:180px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Cotizar por WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- TAB 3: WhatsApp directo -->
+          <div id="tab-whatsapp" class="tab-panel hidden" style="padding:40px 32px; text-align:center;">
+            <div style="max-width:360px; margin:0 auto;">
+              <div style="width:72px; height:72px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+                <svg width="38" height="38" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <h3 style="font-size:1.2rem; font-weight:800; color:#0F2B5B; margin:0 0 10px;">Habla con un asesor ahora</h3>
+              <p style="color:#64748b; font-size:14px; line-height:1.7; margin:0 0 28px;">Escríbenos por WhatsApp y uno de nuestros asesores te atenderá de inmediato con las mejores opciones para tu vehículo.</p>
+              <a href="https://wa.me/528999250235?text=Hola%2C%20me%20interesa%20cotizar%20un%20seguro%20para%20mi%20veh%C3%ADculo.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener" class="btn-wa-form btn-lg" style="display:inline-flex; text-decoration:none; padding:16px 36px; font-size:16px;">
+                <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Abrir WhatsApp
+              </a>
+              <p style="margin-top:20px; font-size:12px; color:#94a3b8;">Horario de atención: Lun–Vie 9:00–18:00</p>
             </div>
-            <div class="form-group">
-              <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
-            </div>
-            <div class="form-group">
-              <label for="cp">Código postal</label>
-              <input type="text" id="cp" name="cp" placeholder="88000" />
-            </div>
-            <div class="form-group">
-              <label for="telefono">Teléfono *</label>
-              <input type="tel" id="telefono" name="telefono" placeholder="(899) 000-0000" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" />
-            </div>
-            <div class="form-group">
-              <label for="tipo">¿Auto o Pickup?</label>
-              <input type="text" id="tipo" name="tipo" placeholder="Ej. Auto sedán" />
-            </div>
-            <div class="form-group">
-              <label for="modelo">Modelo</label>
-              <input type="text" id="modelo" name="modelo" placeholder="Ej. 2022" />
-            </div>
-            <div class="form-group">
-              <label for="ocupantes">Capacidad de ocupantes</label>
-              <input type="text" id="ocupantes" name="ocupantes" placeholder="Ej. 5" />
-            </div>
-            <div class="form-group full">
-              <label for="marca">¿Mexicana 100%? (Marca, submarca, versión, tipo)</label>
-              <input type="text" id="marca" name="marca" placeholder="Ej. Chevrolet Aveo LT Manual" />
-            </div>
-            <div class="form-group full">
-              <label for="serie">¿Regularizada o nacional? (No. de serie)</label>
-              <input type="text" id="serie" name="serie" placeholder="Número de serie del vehículo" />
-            </div>
-            <div class="form-group full">
-              <label for="adaptacion">¿Tiene tumba burros o alguna otra adaptación?</label>
-              <input type="text" id="adaptacion" name="adaptacion" placeholder="Describe cualquier adaptación" />
-            </div>
-            <div class="form-group">
-              <label for="paquete">Paquete a cotizar *</label>
-              <select id="paquete" name="paquete" required>
-                <option value="">Selecciona un paquete</option>
-                <option>Responsabilidad Civil</option>
-                <option>Limitada</option>
-                <option>Amplia</option>
-                <option>Amplia Plus</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="pago">Forma de pago *</label>
-              <select id="pago" name="pago" required>
-                <option value="">Selecciona forma de pago</option>
-                <option>Contado</option>
-                <option>Semestral</option>
-                <option>Trimestral</option>
-                <option>Mensual</option>
-              </select>
-            </div>
-            <p class="form-note full">*El paquete de Responsabilidad Civil solo puede pagarse de Contado</p>
-            <div class="form-footer full">
-              <button type="submit" class="btn-primary btn-lg" style="width:100%">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                Enviar solicitud
-              </button>
-            </div>
-          </form>
+          </div>
+
+          <!-- Éxito compartido -->
           <div id="formSuccess" class="form-success hidden">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             <h3>¡Solicitud enviada!</h3>
-            <p>Un asesor te contactará pronto. También puedes llamarnos al <a href="tel:8999250235">(899) 925-02-35</a> o por WhatsApp al <a href="https://wa.me/528992181217">(899) 218-12-17</a></p>
+            <p>Un asesor te contactará pronto. También puedes llamarnos al <a href="tel:8999250235">(899) 925-02-35</a> o por WhatsApp al <a href="https://wa.me/528999250235">(899) 925-02-35</a></p>
             <a href="index.html" class="btn-primary" style="margin-top:8px">Volver al inicio</a>
           </div>
+
         </div>
       </div>
     </div>
@@ -190,7 +267,7 @@
   <footer class="footer" id="contacto">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="Logo aiser.png" alt="AISER Seguros" class="footer-logo" />
+        <img src="Logo AISER sin fondo.png" alt="AISER Seguros" class="footer-logo" />
         <p>Asesoría integral en seguros y riesgos en Reynosa, Tamaulipas.</p>
         <div class="social-links">
           <a href="https://facebook.com/aisersegurosreynosa" target="_blank" rel="noopener" aria-label="Facebook">
@@ -204,38 +281,261 @@
         <li><a href="servicios.html">Camiones y Trailers</a></li>
         <li><a href="servicios.html">Gastos Médicos</a></li>
         <li><a href="servicios.html">Vida y Hogar</a></li>
-        <li><a href="servicios.html">Empresas y Fianzas</a></li>
+        <li><a href="servicios.html">Empresas</a></li>
       </ul></div>
       <div class="footer-col"><h4>Empresa</h4><ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="acerca-de.html">Acerca de</a></li>
-        <li><a href="cotizar.html">Cotizar</a></li>
+        <li></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul></div>
       <div class="footer-col"><h4>Contacto</h4>
         <ul class="contact-list">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Blvd. Lázaro Cárdenas #720, Reynosa, Tam.</li>
           <li><a href="tel:8999250235"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(899) 925-02-35</a></li>
-          <li><a href="https://wa.me/528992181217" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>WhatsApp: (899) 218-12-17</a></li>
+          <li><a href="https://wa.me/528999250235" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp: (899) 925-02-35</a></li>
         </ul>
-        <div class="schedule"><span>Lun–Vie: 9:00 – 18:00</span><span>Sáb: 9:00 – 13:00</span></div>
+        <div class="schedule"><span>Lun–Vie: 9:00 – 18:00</span></div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <span>© <span id="year"></span> AISER Seguros y Fianzas. Todos los derechos reservados.</span>
+        <span>© <span id="year"></span> AISER Seguros. Todos los derechos reservados.</span>
         <a href="https://ramosmkt.lat/" target="_blank" rel="noopener" class="footer-credit">Sitio realizado por RMKT web &amp; apps</a>
       </div>
     </div>
   </footer>
 
   <div class="whatsapp-wrap">
-    <a href="https://wa.me/528992181217?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20seguro." target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp">
+    <a href="https://wa.me/528999250235?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20seguro." target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp">
       <span class="wa-ring"></span>
-      <svg width="28" height="28" viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.476 2.027 7.786L0 32l8.432-2.004A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.769-1.845l-.485-.287-5.008 1.189 1.212-4.87-.317-.505A13.247 13.247 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.273-9.955c-.398-.199-2.355-1.163-2.72-1.295-.365-.133-.63-.199-.896.2-.265.398-1.03 1.294-1.263 1.561-.233.266-.465.299-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.759-.233-.398-.025-.614.175-.812.18-.179.398-.465.597-.698.2-.232.266-.398.398-.664.133-.265.067-.498-.033-.698-.1-.199-.896-2.161-1.228-2.959-.323-.776-.65-.671-.896-.683l-.763-.013c-.266 0-.698.1-1.063.498-.365.398-1.395 1.362-1.395 3.323s1.428 3.854 1.628 4.12c.199.265 2.81 4.289 6.81 6.018.952.41 1.695.656 2.274.839.955.304 1.824.261 2.511.158.766-.114 2.355-.963 2.688-1.893.332-.93.332-1.727.232-1.893-.1-.166-.365-.265-.763-.465z"/></svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const EMAILJS_PUBLIC_KEY  = 'BpDWZbmjKnOr3KvJa';
+      const EMAILJS_SERVICE_ID  = 'service_01xmx0h';
+      const TEMPLATE_COMPLETO   = 'template_l0yw94s';
+      const TEMPLATE_FOTO       = 'template_l0yw94s'; // reutiliza el mismo template
+
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+      const successPanel = document.getElementById('formSuccess');
+
+      // ── Tabs ─────────────────────────────────────────────────
+      document.querySelectorAll('.cotizar-tab').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.cotizar-tab').forEach(function (b) { b.classList.remove('active'); });
+          document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.add('hidden'); });
+          btn.classList.add('active');
+          document.getElementById('tab-' + btn.dataset.tab).classList.remove('hidden');
+        });
+      });
+      // Mostrar primer tab al cargar
+      document.getElementById('tab-completo').classList.remove('hidden');
+
+      // ── Tab 1: Formulario completo ────────────────────────────
+      var vehicleForm = document.getElementById('quoteForm');
+      var submitBtn   = document.getElementById('btnQuoteSubmit');
+
+      if (vehicleForm) {
+        vehicleForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          submitBtn.disabled    = true;
+          submitBtn.textContent = 'Enviando…';
+          emailjs.sendForm(EMAILJS_SERVICE_ID, TEMPLATE_COMPLETO, vehicleForm)
+            .then(function () {
+              vehicleForm.closest('.tab-panel').classList.add('hidden');
+              successPanel.classList.remove('hidden');
+            })
+            .catch(function (err) {
+              console.error('EmailJS error:', err);
+              alert('Hubo un problema al enviar. Por favor llámanos al (899) 925-02-35.');
+              submitBtn.disabled    = false;
+              submitBtn.innerHTML   = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Enviar solicitud';
+            });
+        });
+      }
+
+      // ── Tab 2: Foto rápida ────────────────────────────────────
+      var quickForm    = document.getElementById('quickForm');
+      var quickSubmit  = document.getElementById('btnQuickSubmit');
+      var quickWABtn   = document.getElementById('btnQuickWA');
+      var fileInput    = document.getElementById('q-foto');
+      var fileLabel    = document.getElementById('fileLabel');
+      var fileDrop     = document.getElementById('fileDrop');
+
+      if (fileInput) {
+        fileInput.addEventListener('change', function () {
+          if (fileInput.files.length) {
+            fileLabel.textContent = fileInput.files[0].name;
+            fileDrop.classList.add('has-file');
+          }
+        });
+        fileDrop.addEventListener('dragover',  function (e) { e.preventDefault(); fileDrop.classList.add('drag-over'); });
+        fileDrop.addEventListener('dragleave', function ()  { fileDrop.classList.remove('drag-over'); });
+        fileDrop.addEventListener('drop', function (e) {
+          e.preventDefault();
+          fileDrop.classList.remove('drag-over');
+          if (e.dataTransfer.files.length) {
+            fileInput.files = e.dataTransfer.files;
+            fileLabel.textContent = e.dataTransfer.files[0].name;
+            fileDrop.classList.add('has-file');
+          }
+        });
+      }
+
+      function compressImage(file, maxWidth, quality) {
+        return new Promise(function (resolve) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var img = new Image();
+            img.onload = function () {
+              var scale  = Math.min(1, maxWidth / img.width);
+              var canvas = document.createElement('canvas');
+              canvas.width  = img.width  * scale;
+              canvas.height = img.height * scale;
+              canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+              resolve(canvas.toDataURL('image/jpeg', quality));
+            };
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      if (quickForm) {
+        quickForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var nombre   = quickForm.querySelector('[name="nombre"]').value.trim();
+          var telefono = quickForm.querySelector('[name="telefono"]').value.trim();
+          var email    = quickForm.querySelector('[name="email"]').value.trim();
+          if (!nombre)   { alert('Por favor ingresa tu nombre.'); return; }
+          if (!telefono) { alert('Por favor ingresa tu teléfono.'); return; }
+
+          quickSubmit.disabled    = true;
+          quickSubmit.textContent = 'Enviando…';
+
+          var file = fileInput && fileInput.files[0];
+          var imagePromise = file
+            ? compressImage(file, 1000, 0.65)
+            : Promise.resolve(null);
+
+          imagePromise.then(function (base64) {
+            var fotoHtml = base64
+              ? '<img src="' + base64 + '" style="max-width:100%;border-radius:8px;" alt="Tarjeta de circulación"/>'
+              : '<em style="color:#94a3b8;">Sin foto adjunta</em>';
+
+            return emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_FOTO, {
+              nombre:        nombre,
+              telefono:      telefono,
+              email:         email,
+              tipo:          'Cotización rápida por foto',
+              paquete:       'Por definir con asesor',
+              tarjeta_foto:  fotoHtml
+            });
+          })
+            .then(function () {
+              quickForm.closest('.tab-panel').classList.add('hidden');
+              successPanel.classList.remove('hidden');
+            })
+            .catch(function (err) {
+              console.error('EmailJS error:', err);
+              alert('Hubo un problema al enviar. Por favor llámanos al (899) 925-02-35.');
+              quickSubmit.disabled  = false;
+              quickSubmit.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Enviar por correo';
+            });
+        });
+
+        if (quickWABtn) {
+          quickWABtn.addEventListener('click', function () {
+            var nombre   = quickForm.querySelector('[name="nombre"]').value.trim();
+            var telefono = quickForm.querySelector('[name="telefono"]').value.trim();
+            var msg = 'Hola, me interesa cotizar un seguro para mi vehículo.'
+              + (nombre   ? ' Mi nombre es ' + nombre + '.' : '')
+              + (telefono ? ' Mi teléfono es ' + telefono + '.' : '');
+            window.open('https://wa.me/528999250235?text=' + encodeURIComponent(msg), '_blank');
+          });
+        }
+      }
+
+    })();
+  </script>
+
+  <style>
+    /* ── Tabs ──────────────────────────────────────────────── */
+    .cotizar-tabs {
+      display: flex;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .cotizar-tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 16px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748b;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: color .2s, border-color .2s, background .2s;
+      white-space: nowrap;
+    }
+    .cotizar-tab:hover { color: #0F2B5B; background: #f1f5f9; }
+    .cotizar-tab.active { color: #1E8FFF; border-bottom-color: #1E8FFF; background: #fff; }
+
+    /* ── File drop zone ────────────────────────────────────── */
+    .file-drop-zone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 32px 20px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 14px;
+      background: #f8fafc;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      text-align: center;
+      font-size: 14px;
+      color: #64748b;
+    }
+    .file-drop-zone:hover, .file-drop-zone.drag-over { border-color: #1E8FFF; background: #eef6ff; }
+    .file-drop-zone.has-file { border-color: #22c55e; background: #f0fdf4; color: #166534; }
+
+    /* ── WhatsApp form button ──────────────────────────────── */
+    .btn-wa-form {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 24px; background: #25D366; color: #fff;
+      font-size: 15px; font-weight: 700; border: none; border-radius: 12px;
+      cursor: pointer; text-decoration: none; transition: background .2s, transform .15s;
+    }
+    .btn-wa-form:hover { background: #1db954; transform: translateY(-1px); }
+
+    /* ── Hidden / Success ──────────────────────────────────── */
+    .hidden { display: none !important; }
+    .form-success {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; padding: 48px 24px; gap: 16px;
+    }
+    .form-success h3 { font-size: 1.4rem; font-weight: 800; color: #0F2B5B; }
+    .form-success p  { color: #64748b; font-size: .95rem; line-height: 1.6; max-width: 380px; }
+    .form-success a  { color: #1E8FFF; font-weight: 600; }
+
+    @media (max-width: 600px) {
+      .cotizar-tab { font-size: 11px; padding: 14px 6px; gap: 4px; }
+      .cotizar-tab svg { display: none; }
+    }
+  </style>
 </body>
 </html>
+
