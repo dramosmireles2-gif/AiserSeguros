@@ -1,0 +1,304 @@
+/* ===================================================
+   MOBILE STYLES — 320px – 767px
+   Desktop (768px+) no se toca.
+   =================================================== */
+
+/* ── 1. ESPACIADO GLOBAL ── */
+@media (max-width: 767px) {
+  .section         { padding: 52px 0; }
+  .partners-section { padding: 36px 0; }
+  .cta-strip       { padding: 48px 0; }
+  .section-header  { margin-bottom: 36px; }
+  .section-header h2 { font-size: 1.85rem; }
+  .section-header p  { font-size: 1rem; }
+
+  /* Body padding para la barra sticky inferior */
+  body { padding-bottom: 72px; }
+}
+
+/* ── 2. NAVBAR – CTA "Cotizar" visible dentro del menú móvil ── */
+.nav-mobile-cta { display: none; }
+
+@media (max-width: 900px) {
+  .nav-mobile-cta {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 13px 20px !important;
+    background: linear-gradient(135deg, #FF6B2B, #ff8c55) !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    border-radius: 10px;
+    border-bottom: none !important;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(255,107,43,0.3);
+  }
+  .nav-mobile-cta:hover { opacity: 0.9; background: none; }
+  .nav-mobile-cta::after { display: none !important; }
+}
+
+/* ── 3. HERO ── */
+@media (max-width: 767px) {
+  .hero { min-height: auto; }
+
+  .hero-content { padding: 80px 0 48px; }
+
+  .hero-badge    { font-size: 11px; padding: 5px 12px; margin-bottom: 14px; letter-spacing: .02em; }
+  .hero-title    { font-size: 2.2rem; margin-bottom: 14px; }
+  .hero-desc     { font-size: 1rem; margin-bottom: 26px; }
+
+  /* Botones hero apilados y full-width */
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 36px;
+    padding: 0 4px;
+  }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 20px;
+    font-size: 15px;
+  }
+
+  /* Stats en cuadrícula 2×2 */
+  .hero-stats { gap: 10px; }
+  .stat-card {
+    min-width: calc(50% - 5px);
+    flex: 1 1 calc(50% - 5px);
+    padding: 14px 10px;
+  }
+  .stat-num   { font-size: 1.6rem; }
+  .stat-label { font-size: 11px; }
+
+  /* Carousel de servicios */
+  .carousel-label   { font-size: 10px; letter-spacing: .08em; margin-bottom: 8px; }
+  .carousel-wrap    { gap: 6px; }
+  .hero .carousel-btn { width: 34px; height: 34px; }
+  .hero .service-card { padding: 16px 10px; gap: 6px; }
+  .hero .service-card .service-icon { font-size: 1.8rem; }
+  .hero .service-card span { font-size: 12px; font-weight: 600; }
+
+  .scroll-down { bottom: 16px; }
+}
+
+/* ── 4. ¿POR QUÉ AISER? ── */
+@media (max-width: 767px) {
+  .whyus-grid      { gap: 32px; }
+  .whyus-statement { font-size: 1.05rem; margin-top: 12px; }
+  .mini-stats      { gap: 16px; }
+  .mini-num        { font-size: 1.6rem; }
+}
+
+/* ── 5. CARDS DE RAZONES ── */
+@media (max-width: 767px) {
+  .reason-card { padding: 16px; gap: 12px; }
+  .reason-card h4 { font-size: 14px; }
+  .reason-card p  { font-size: 12px; }
+  .reason-icon { width: 42px; height: 42px; border-radius: 11px; }
+}
+
+/* ── 6. ASEGURADORAS (partners) ── */
+@media (max-width: 767px) {
+  .partners-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .partner-logo-wrap { height: 76px; padding: 12px 8px; border-radius: 12px; }
+  .partner-logo      { max-height: 42px; }
+}
+
+/* ── 7. CTA STRIP – botones full-width apilados ── */
+@media (max-width: 767px) {
+  .cta-strip-btns {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+  }
+  .cta-strip-btns .btn-primary,
+  .cta-strip-btns .btn-wa-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+}
+
+/* ── 8. FOOTER ── */
+@media (max-width: 767px) {
+  .footer-grid { padding: 44px 0 28px; gap: 28px; }
+  .footer-logo { height: 44px; margin-bottom: 10px; }
+  .footer-brand p { font-size: 13px; line-height: 1.6; }
+  .footer-bottom .container { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+}
+
+/* ── 9. PAGE HERO (páginas internas) ── */
+@media (max-width: 767px) {
+  .page-hero { padding: 110px 0 44px; }
+  .page-hero-content h1 { font-size: 1.85rem; }
+  .page-hero-content p  { font-size: 0.95rem; }
+}
+
+/* ── 10. GRID DE SERVICIOS ── */
+@media (max-width: 767px) {
+  .services-category   { margin-bottom: 32px; }
+  .category-title      { font-size: 1rem; }
+  .services-grid       { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .service-card        { min-height: 90px; padding: 16px 8px; gap: 8px; border-radius: 14px; }
+  .service-icon        { font-size: 1.7rem; }
+  .service-card span   { font-size: 11px; line-height: 1.2; }
+}
+
+@media (max-width: 480px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+
+/* ── 11. ACERCA DE – about grid ── */
+@media (max-width: 767px) {
+  .about-text p         { font-size: 0.95rem; line-height: 1.7; }
+  .about-highlights     { gap: 20px; flex-wrap: wrap; }
+  .highlight            { flex: 1; min-width: 72px; }
+  .highlight-num        { font-size: 1.8rem; }
+  .about-image-wrap     { margin-top: 4px; }
+  .about-image-badge    { font-size: 12px; padding: 8px 14px; right: 16px; }
+}
+
+/* ── 12. MVV (misión, visión, valores) ── */
+@media (max-width: 767px) {
+  .mvv-grid { grid-template-columns: 1fr; gap: 16px; }
+  .mvv-card { padding: 28px 20px; }
+}
+
+/* ── 13. CHARTS (gráficas de anillos) ── */
+@media (max-width: 767px) {
+  .charts-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .chart-ring-wrap { width: 110px; height: 110px; }
+  .chart-ring      { width: 110px; height: 110px; }
+  .chart-num       { font-size: 1.3rem; }
+  .chart-item h4   { font-size: 13px; }
+  .chart-item p    { font-size: 12px; }
+}
+
+/* ── 14. TIMELINE ── */
+@media (max-width: 767px) {
+  .timeline-card { padding: 18px; }
+  .timeline-card h4 { font-size: 14px; }
+  .timeline-card p  { font-size: 12px; }
+}
+
+/* ── 15. FORMULARIO COTIZAR ── */
+@media (max-width: 767px) {
+  /* Formulario primero, info de contacto después */
+  .quote-layout { display: flex !important; flex-direction: column; }
+  .form-card        { order: 1; }
+  .quote-contact-box { order: 2; margin-top: 8px; }
+
+  .form-card { border-radius: 16px; }
+}
+
+@media (max-width: 600px) {
+  .form-card { padding: 20px 16px !important; }
+}
+
+/* Tabs de cotizar – scroll horizontal en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .cotizar-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .cotizar-tabs::-webkit-scrollbar { display: none; }
+  .cotizar-tab {
+    flex: 0 0 auto;
+    min-width: 108px;
+    font-size: 11px;
+    padding: 13px 8px;
+  }
+}
+
+/* ── 16. CONTACTO ── */
+@media (max-width: 767px) {
+  .info-icon  { width: 40px; height: 40px; border-radius: 12px; }
+  .info-value { font-size: 14px; }
+  .contact-banner-inner    { gap: 14px; }
+  .contact-banner-phones   { flex-direction: column; gap: 10px; }
+}
+
+/* ── 17. BOTÓN FLOTANTE WHATSAPP – sube sobre la barra sticky ── */
+@media (max-width: 767px) {
+  .whatsapp-wrap { bottom: 84px; right: 16px; }
+  .wa-btn { width: 50px; height: 50px; }
+  .wa-btn svg { width: 24px; height: 24px; }
+}
+
+/* ── 18. BARRA CTA STICKY INFERIOR (solo móvil) ── */
+.mobile-cta-bar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-cta-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 150;
+    background: #0A1E3D;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 10px;
+    box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .mobile-cta-cotizar,
+  .mobile-cta-wa {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 13px 8px;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: opacity .2s, transform .15s;
+  }
+  .mobile-cta-cotizar:active,
+  .mobile-cta-wa:active { transform: scale(0.97); }
+
+  .mobile-cta-cotizar {
+    background: linear-gradient(135deg, #FF6B2B, #ff8c55);
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(255,107,43,0.35);
+  }
+
+  .mobile-cta-wa {
+    background: #25D366;
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(37,211,102,0.35);
+  }
+}
+
+/* ── 19. TESTIMONIALS ── */
+@media (max-width: 767px) {
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+  .testimonial-card  { padding: 22px 18px; }
+  .testimonial-card p { font-size: 13px; }
+}
+
+/* ── 20. PRODUCT CARDS (home) ── */
+@media (max-width: 767px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .product-card  { padding: 22px 18px; }
+  .product-icon  { width: 44px; height: 44px; margin-bottom: 12px; }
+  .product-card h3 { font-size: 14px; }
+  .product-card p  { font-size: 12px; }
+}
+
+@media (max-width: 400px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
