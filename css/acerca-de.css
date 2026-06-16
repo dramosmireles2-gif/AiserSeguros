@@ -18,7 +18,7 @@
 @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
 .about-text .section-tag { margin-bottom: 12px; }
 .about-text h2 { font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 900; color: var(--navy); margin-bottom: 20px; line-height: 1.2; }
-.about-text p { color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+.about-text p { color: #111; font-weight: 700; line-height: 1.8; margin-bottom: 16px; }
 .about-highlights { display: flex; gap: 32px; margin-top: 32px; padding-top: 32px; border-top: 1px solid #e5e7eb; }
 .highlight { text-align: center; }
 .highlight-num { font-size: 2.2rem; font-weight: 900; color: var(--blue); line-height: 1; }

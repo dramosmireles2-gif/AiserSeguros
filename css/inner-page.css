@@ -6,11 +6,11 @@
 /* Page hero */
 .page-hero {
   background: linear-gradient(135deg, #0F2B5B 0%, #163d80 55%, #1E8FFF 100%);
-  padding: 140px 0 80px; position: relative; overflow: hidden; text-align: center;
+  padding: 140px 0 80px; position: relative; overflow: hidden;
 }
 .page-hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-.page-hero-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
-.page-hero-content h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 900; color: #fff; margin: 16px 0 20px; line-height: 1.1; }
+.page-hero-content { position: relative; z-index: 1; }
+.page-hero-content h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; color: #fff; margin: 12px 0 16px; line-height: 1.15; max-width: 900px; }
 .page-hero-content p  { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.7; }
 
 /* Quote layout en cotizar.html */
