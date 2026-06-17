@@ -1,3 +1,20 @@
+// Page transitions
+document.addEventListener('click', e => {
+  const link = e.target.closest('a[href]');
+  if (!link || link.target === '_blank') return;
+  try {
+    const url = new URL(link.href, location.href);
+    if (url.origin !== location.origin) return;
+    if (url.pathname === location.pathname && !url.hash) return;
+    if (url.hash && url.pathname === location.pathname) return;
+  } catch { return; }
+
+  e.preventDefault();
+  const dest = link.href;
+  document.body.classList.add('leaving');
+  setTimeout(() => { location.href = dest; }, 260);
+});
+
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
