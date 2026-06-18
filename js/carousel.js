@@ -13,8 +13,8 @@ else {
     if (window.innerWidth >= 1400) return 4;
     if (window.innerWidth >= 1100) return 4;
     if (window.innerWidth >= 768)  return 3;
-    if (window.innerWidth >= 480)  return 2;
-    return 1;
+    if (window.innerWidth <= 767)  return 1;
+    return 2;
   }
 
   function cardWidth() {

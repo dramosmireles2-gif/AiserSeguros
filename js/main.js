@@ -23,9 +23,13 @@ const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
+  hamburger.classList.toggle('active');
 });
 navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('active');
+  });
 });
 
 // WhatsApp tooltip close
@@ -35,6 +39,32 @@ if (waClose) {
     document.getElementById('waTooltip').style.display = 'none';
   });
 }
+
+// Semi-automatic snap carousel helper (mobile only)
+function initSnapCarousel(container, selector, interval) {
+  if (!container || window.innerWidth > 767) return;
+  const items = Array.from(container.querySelectorAll(selector));
+  let index = 0;
+  let timer;
+
+  function next() {
+    index = (index + 1) % items.length;
+    const card = items[index];
+    const offset = card.offsetLeft - (container.offsetWidth - card.offsetWidth) / 2;
+    container.scrollTo({ left: offset, behavior: 'smooth' });
+  }
+
+  function start() { return setInterval(next, interval); }
+
+  timer = start();
+  container.addEventListener('touchstart', () => clearInterval(timer), { passive: true });
+  container.addEventListener('touchend',   () => { timer = start(); });
+}
+
+initSnapCarousel(document.querySelector('.hero .carousel-viewport'), '.service-card',  3000);
+initSnapCarousel(document.querySelector('.reasons-grid'),            '.reason-card',   3200);
+initSnapCarousel(document.querySelector('.partners-grid'),           '.partner-logo-wrap', 2800);
+initSnapCarousel(document.querySelector('.mvv-grid'),                '.mvv-card',      3500);
 
 // Fade-in on scroll
 const observer = new IntersectionObserver((entries) => {
