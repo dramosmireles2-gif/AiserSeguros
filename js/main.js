@@ -15,6 +15,14 @@ document.addEventListener('click', e => {
   setTimeout(() => { location.href = dest; }, 260);
 });
 
+// Cuando el navegador restaura la página desde el BFCache (botón atrás/adelante),
+// quita la clase "leaving" para que el body no quede invisible.
+window.addEventListener('pageshow', e => {
+  if (e.persisted) {
+    document.body.classList.remove('leaving');
+  }
+});
+
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
