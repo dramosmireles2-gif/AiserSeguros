@@ -16,6 +16,8 @@
 
 /* ── 2. NAVBAR – logo centrado en móvil ── */
 @media (max-width: 900px) {
+  .logo-img { height: 48px; }
+  .navbar { padding: 8px 0; }
   .nav-inner {
     position: relative;
     justify-content: center;
@@ -52,9 +54,9 @@
 
 /* ── 3. HERO ── */
 @media (max-width: 767px) {
-  .hero { min-height: auto; }
+  .hero { min-height: auto; padding-top: 28px; }
 
-  .hero-content { padding: 124px 0 48px; }
+  .hero-content { padding: 0 0 48px; }
 
   .hero-badge    { font-size: 11px; padding: 5px 12px; margin-bottom: 14px; letter-spacing: .02em; }
   .hero-title    { font-size: 2.2rem; margin-bottom: 14px; }
@@ -265,9 +267,12 @@
 
 /* ── 9. PAGE HERO (páginas internas) ── */
 @media (max-width: 767px) {
-  .page-hero { padding: 110px 0 44px; }
-  .page-hero-content h1 { font-size: 1.85rem; }
-  .page-hero-content p  { font-size: 0.95rem; }
+  .page-hero { padding: 28px 0 24px; }
+  .page-hero-content { text-align: left; }
+  .page-hero-content .section-tag { font-size: 13px; padding: 6px 14px; }
+  .page-hero-content h1 { font-size: 1.5rem; margin: 8px 0 8px; }
+  .page-hero-content p  { font-size: 0.88rem; font-weight: 500; line-height: 1.6; }
+
 }
 
 /* ── 10. GRID DE SERVICIOS ── */

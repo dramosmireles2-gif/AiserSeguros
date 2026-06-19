@@ -26,12 +26,30 @@ window.addEventListener('pageshow', e => {
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Mantiene sincronizada la altura real del navbar para compensar heroes
+const navbar = document.getElementById('navbar');
+const syncNavbarHeight = () => {
+  if (!navbar) return;
+  const height = Math.ceil(navbar.getBoundingClientRect().height);
+  document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+};
+
+if (navbar) {
+  syncNavbarHeight();
+  window.addEventListener('load', syncNavbarHeight);
+  window.addEventListener('resize', syncNavbarHeight);
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(syncNavbarHeight).observe(navbar);
+  }
+}
+
 // Mobile hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
   hamburger.classList.toggle('active');
+  syncNavbarHeight();
 });
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
