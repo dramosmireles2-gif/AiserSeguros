@@ -112,27 +112,36 @@
         </div>
 
         <!-- Formulario con 3 tabs -->
-        <div class="form-card" style="padding-top:0; overflow:hidden;">
+        <div class="form-card quote-form-card">
 
           <!-- Tabs -->
-          <div class="cotizar-tabs">
-            <button class="cotizar-tab active" data-tab="completo">
+          <div class="cotizar-tabs-wrap">
+            <div class="cotizar-tabs" role="tablist" aria-label="Tipos de cotización">
+            <button type="button" class="cotizar-tab active" data-tab="completo" role="tab" aria-selected="true" aria-controls="tab-completo">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              Formulario completo
+              <span>Formulario completo</span>
             </button>
-            <button class="cotizar-tab" data-tab="foto">
+            <button type="button" class="cotizar-tab" data-tab="foto" role="tab" aria-selected="false" aria-controls="tab-foto">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Foto rápida
+              <span>Foto rápida</span>
             </button>
-            <button class="cotizar-tab" data-tab="whatsapp">
+            <button type="button" class="cotizar-tab" data-tab="whatsapp" role="tab" aria-selected="false" aria-controls="tab-whatsapp">
               <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp directo
+              <span>WhatsApp directo</span>
             </button>
+            </div>
+            <p class="cotizar-tabs-note">Elige la forma más rápida para cotizar contigo. Puedes cambiar de opción en cualquier momento.</p>
           </div>
 
           <!-- TAB 1: Formulario completo -->
-          <div id="tab-completo" class="tab-panel" style="padding:28px 32px;">
+          <div id="tab-completo" class="tab-panel is-active" role="tabpanel">
+            <div class="tab-panel-copy">
+              <span class="tab-panel-eyebrow">Opción recomendada</span>
+              <h3>Completa tus datos y recibe una cotización más precisa</h3>
+              <p>Ideal si quieres una propuesta mejor ajustada al vehículo, cobertura y condiciones que necesitas.</p>
+            </div>
             <form id="quoteForm" class="quote-form">
+              <div class="form-error-summary" id="quoteErrorSummary" role="alert" aria-live="polite"></div>
               <div class="form-group">
                 <label for="nombre">Nombre *</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
@@ -190,7 +199,7 @@
               </div>
               <p class="form-note full">Forma de pago disponible: Contado.</p>
               <div class="form-footer full">
-                <button type="submit" id="btnQuoteSubmit" class="btn-primary btn-lg" style="width:100%">
+                <button type="submit" id="btnQuoteSubmit" class="btn-primary btn-lg quote-submit-btn">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                   Enviar solicitud
                 </button>
@@ -199,17 +208,22 @@
           </div>
 
           <!-- TAB 2: Foto rápida -->
-          <div id="tab-foto" class="tab-panel hidden" style="padding:28px 32px;">
-            <p style="color:#64748b; font-size:14px; margin:0 0 20px; line-height:1.6;">Sube la foto de tu tarjeta de circulación y déjanos tus datos. Un asesor te contactará en menos de 24 h.</p>
+          <div id="tab-foto" class="tab-panel hidden" role="tabpanel" hidden>
+            <div class="tab-panel-copy">
+              <span class="tab-panel-eyebrow">Más práctico</span>
+              <h3>Sube tu tarjeta y deja que nosotros hagamos el resto</h3>
+              <p>Una opción rápida para avanzar sin llenar tantos campos. Tu asesor revisa la imagen y te responde en menos tiempo.</p>
+            </div>
             <form id="quickForm" class="quote-form">
+              <div class="form-error-summary" id="quickErrorSummary" role="alert" aria-live="polite"></div>
               <div class="form-group full">
                 <label>Foto de tarjeta de circulación *</label>
                 <label for="q-foto" class="file-drop-zone" id="fileDrop">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                   <span id="fileLabel">Haz clic o arrastra la imagen aquí</span>
-                  <span style="font-size:12px; color:#94a3b8;">JPG, PNG o PDF · máx. 5 MB</span>
+                  <span class="file-drop-meta">JPG, PNG o PDF · máx. 5 MB</span>
                 </label>
-                <input type="file" id="q-foto" name="tarjeta_circulacion" accept="image/*,.pdf" style="display:none" />
+                <input type="file" id="q-foto" name="tarjeta_circulacion" accept="image/*,.pdf" class="visually-hidden-file" />
               </div>
               <div class="form-group">
                 <label for="q-nombre">Nombre completo *</label>
@@ -225,12 +239,12 @@
               </div>
               <input type="hidden" name="tipo" value="Cotización rápida por foto" />
               <input type="hidden" name="paquete" value="Por definir con asesor" />
-              <div class="form-footer full" style="display:flex; gap:12px; flex-wrap:wrap;">
-                <button type="submit" id="btnQuickSubmit" class="btn-primary btn-lg" style="flex:1; min-width:180px;">
+              <div class="form-footer full quick-actions">
+                <button type="submit" id="btnQuickSubmit" class="btn-primary btn-lg quick-action-btn">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                   Enviar por correo
                 </button>
-                <button type="button" id="btnQuickWA" class="btn-wa-form btn-lg" style="flex:1; min-width:180px;">
+                <button type="button" id="btnQuickWA" class="btn-wa-form btn-lg quick-action-btn">
                   <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                   Cotizar por WhatsApp
                 </button>
@@ -239,27 +253,28 @@
           </div>
 
           <!-- TAB 3: WhatsApp directo -->
-          <div id="tab-whatsapp" class="tab-panel hidden" style="padding:40px 32px; text-align:center;">
-            <div style="max-width:360px; margin:0 auto;">
-              <div style="width:72px; height:72px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+          <div id="tab-whatsapp" class="tab-panel hidden" role="tabpanel" hidden>
+            <div class="whatsapp-direct-card">
+              <div class="whatsapp-direct-icon">
                 <svg width="38" height="38" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </div>
-              <h3 style="font-size:1.2rem; font-weight:800; color:#0F2B5B; margin:0 0 10px;">Habla con un asesor ahora</h3>
-              <p style="color:#64748b; font-size:14px; line-height:1.7; margin:0 0 28px;">Escríbenos por WhatsApp y uno de nuestros asesores te atenderá de inmediato con las mejores opciones para tu vehículo.</p>
-              <a href="https://wa.me/528999250235?text=Hola%2C%20me%20interesa%20cotizar%20un%20seguro%20para%20mi%20veh%C3%ADculo.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener" class="btn-wa-form btn-lg" style="display:inline-flex; text-decoration:none; padding:16px 36px; font-size:16px;">
+              <span class="tab-panel-eyebrow whatsapp-direct-eyebrow">Respuesta inmediata</span>
+              <h3>Habla con un asesor ahora</h3>
+              <p>Escríbenos por WhatsApp y uno de nuestros asesores te atenderá de inmediato con las mejores opciones para tu vehículo.</p>
+              <a href="https://wa.me/528999250235?text=Hola%2C%20me%20interesa%20cotizar%20un%20seguro%20para%20mi%20veh%C3%ADculo.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener" class="btn-wa-form btn-lg whatsapp-direct-link">
                 <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Abrir WhatsApp
               </a>
-              <p style="margin-top:20px; font-size:12px; color:#3a5a8a;">Horario de atención: Lun–Vie 9:00 – 13:30 / 14:00 – 18:00</p>
+              <p class="whatsapp-direct-meta">Horario de atención: Lun–Vie 9:00 – 13:30 / 14:00 – 18:00</p>
             </div>
           </div>
 
           <!-- Éxito compartido -->
-          <div id="formSuccess" class="form-success hidden">
+          <div id="formSuccess" class="form-success hidden" hidden aria-live="polite">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             <h3>¡Solicitud enviada!</h3>
             <p>Un asesor te contactará pronto. También puedes llamarnos al <a href="tel:8999250235">(899) 925-02-35</a> o por WhatsApp al <a href="https://wa.me/528999250235">(899) 925-02-35</a></p>
-            <a href="../" class="btn-primary" style="margin-top:8px">Volver al inicio</a>
+            <a href="../" class="btn-primary">Volver al inicio</a>
           </div>
 
         </div>
@@ -367,18 +382,134 @@
       emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
       const successPanel = document.getElementById('formSuccess');
+      const tabsWrap = document.querySelector('.cotizar-tabs-wrap');
+      const tabs = Array.from(document.querySelectorAll('.cotizar-tab'));
+      const panels = Array.from(document.querySelectorAll('.tab-panel'));
+      const quoteErrorSummary = document.getElementById('quoteErrorSummary');
+      const quickErrorSummary = document.getElementById('quickErrorSummary');
+
+      function clearFieldErrors(form) {
+        form.querySelectorAll('[aria-invalid="true"]').forEach(function (field) {
+          field.removeAttribute('aria-invalid');
+        });
+        form.querySelectorAll('.field-error').forEach(function (message) {
+          message.remove();
+        });
+      }
+
+      function setSummary(summaryEl, message) {
+        if (!summaryEl) return;
+        summaryEl.textContent = message || '';
+        summaryEl.classList.toggle('is-visible', Boolean(message));
+      }
+
+      function showFieldError(field, message) {
+        if (!field) return;
+        field.setAttribute('aria-invalid', 'true');
+        const error = document.createElement('p');
+        error.className = 'field-error';
+        error.textContent = message;
+        field.insertAdjacentElement('afterend', error);
+      }
+
+      function bindFieldReset(form, summaryEl) {
+        form.querySelectorAll('input, select, textarea').forEach(function (field) {
+          field.addEventListener('input', function () {
+            field.removeAttribute('aria-invalid');
+            const next = field.nextElementSibling;
+            if (next && next.classList.contains('field-error')) next.remove();
+            if (!form.querySelector('.field-error')) setSummary(summaryEl, '');
+          });
+          field.addEventListener('change', function () {
+            field.removeAttribute('aria-invalid');
+            const next = field.nextElementSibling;
+            if (next && next.classList.contains('field-error')) next.remove();
+            if (!form.querySelector('.field-error')) setSummary(summaryEl, '');
+          });
+        });
+      }
+
+      function validateRequiredFields(form, fields, summaryEl) {
+        clearFieldErrors(form);
+        setSummary(summaryEl, '');
+
+        const invalidFields = [];
+        fields.forEach(function (config) {
+          const field = form.querySelector(config.selector);
+          if (!field) return;
+          const value = (field.value || '').trim();
+          if (!value) {
+            invalidFields.push({ field: field, message: config.message });
+          }
+        });
+
+        if (!invalidFields.length) return true;
+
+        invalidFields.forEach(function (item) {
+          showFieldError(item.field, item.message);
+        });
+        setSummary(summaryEl, 'Revisa los campos marcados antes de continuar.');
+        invalidFields[0].field.focus();
+        return false;
+      }
+
+      function activateTab(tabName) {
+        tabs.forEach(function (tab) {
+          const isActive = tab.dataset.tab === tabName;
+          tab.classList.toggle('active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        panels.forEach(function (panel) {
+          const isTarget = panel.id === 'tab-' + tabName;
+          panel.classList.remove('is-active');
+
+          if (!isTarget) {
+            panel.classList.add('hidden');
+            panel.hidden = true;
+            return;
+          }
+
+          panel.hidden = false;
+          panel.classList.remove('hidden');
+          requestAnimationFrame(function () {
+            panel.classList.add('is-active');
+          });
+        });
+      }
+
+      function showSuccess(fromPanel) {
+        if (tabsWrap) tabsWrap.classList.add('hidden');
+        if (fromPanel) {
+          fromPanel.classList.add('hidden');
+          fromPanel.hidden = true;
+        }
+        successPanel.hidden = false;
+        successPanel.classList.remove('hidden');
+      }
 
       // ── Tabs ─────────────────────────────────────────────────
-      document.querySelectorAll('.cotizar-tab').forEach(function (btn) {
+      tabs.forEach(function (btn) {
         btn.addEventListener('click', function () {
-          document.querySelectorAll('.cotizar-tab').forEach(function (b) { b.classList.remove('active'); });
-          document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.add('hidden'); });
-          btn.classList.add('active');
-          document.getElementById('tab-' + btn.dataset.tab).classList.remove('hidden');
+          activateTab(btn.dataset.tab);
+        });
+        btn.addEventListener('keydown', function (event) {
+          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft' && event.key !== 'Home' && event.key !== 'End') return;
+          event.preventDefault();
+
+          const currentIndex = tabs.indexOf(btn);
+          let nextIndex = currentIndex;
+
+          if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+          if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+          if (event.key === 'Home') nextIndex = 0;
+          if (event.key === 'End') nextIndex = tabs.length - 1;
+
+          tabs[nextIndex].focus();
+          activateTab(tabs[nextIndex].dataset.tab);
         });
       });
-      // Mostrar primer tab al cargar
-      document.getElementById('tab-completo').classList.remove('hidden');
+      activateTab('completo');
 
       // ── Tab 1: Formulario completo ────────────────────────────
       var vehicleForm = document.getElementById('quoteForm');
@@ -387,12 +518,18 @@
       if (vehicleForm) {
         vehicleForm.addEventListener('submit', function (e) {
           e.preventDefault();
+          if (!validateRequiredFields(vehicleForm, [
+            { selector: '#nombre', message: 'Ingresa tu nombre completo.' },
+            { selector: '#telefono', message: 'Ingresa un teléfono de contacto.' },
+            { selector: '#paquete', message: 'Selecciona el paquete que quieres cotizar.' },
+            { selector: '#pago', message: 'Confirma la forma de pago.' }
+          ], quoteErrorSummary)) return;
+
           submitBtn.disabled    = true;
           submitBtn.textContent = 'Enviando…';
           emailjs.sendForm(EMAILJS_SERVICE_ID, TEMPLATE_COMPLETO, vehicleForm)
             .then(function () {
-              vehicleForm.closest('.tab-panel').classList.add('hidden');
-              successPanel.classList.remove('hidden');
+              showSuccess(vehicleForm.closest('.tab-panel'));
             })
             .catch(function (err) {
               console.error('EmailJS error:', err);
@@ -410,6 +547,9 @@
       var fileInput    = document.getElementById('q-foto');
       var fileLabel    = document.getElementById('fileLabel');
       var fileDrop     = document.getElementById('fileDrop');
+
+      if (vehicleForm) bindFieldReset(vehicleForm, quoteErrorSummary);
+      if (quickForm) bindFieldReset(quickForm, quickErrorSummary);
 
       if (fileInput) {
         fileInput.addEventListener('change', function () {
@@ -453,11 +593,14 @@
       if (quickForm) {
         quickForm.addEventListener('submit', function (e) {
           e.preventDefault();
+          if (!validateRequiredFields(quickForm, [
+            { selector: '#q-nombre', message: 'Ingresa tu nombre completo.' },
+            { selector: '#q-telefono', message: 'Ingresa un teléfono de contacto.' }
+          ], quickErrorSummary)) return;
+
           var nombre   = quickForm.querySelector('[name="nombre"]').value.trim();
           var telefono = quickForm.querySelector('[name="telefono"]').value.trim();
           var email    = quickForm.querySelector('[name="email"]').value.trim();
-          if (!nombre)   { alert('Por favor ingresa tu nombre.'); return; }
-          if (!telefono) { alert('Por favor ingresa tu teléfono.'); return; }
 
           quickSubmit.disabled    = true;
           quickSubmit.textContent = 'Enviando…';
@@ -469,8 +612,8 @@
 
           imagePromise.then(function (base64) {
             var fotoHtml = base64
-              ? '<img src="' + base64 + '" style="max-width:100%;border-radius:8px;" alt="Tarjeta de circulación"/>'
-              : '<em style="color:#94a3b8;">Sin foto adjunta</em>';
+              ? '<img src="' + base64 + '" class="email-preview-image" alt="Tarjeta de circulación"/>'
+              : '<em class="email-preview-empty">Sin foto adjunta</em>';
 
             return emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_FOTO, {
               nombre:        nombre,
@@ -482,8 +625,7 @@
             });
           })
             .then(function () {
-              quickForm.closest('.tab-panel').classList.add('hidden');
-              successPanel.classList.remove('hidden');
+              showSuccess(quickForm.closest('.tab-panel'));
             })
             .catch(function (err) {
               console.error('EmailJS error:', err);
@@ -508,77 +650,6 @@
     })();
   </script>
 
-  <style>
-    /* ── Tabs ──────────────────────────────────────────────── */
-    .cotizar-tabs {
-      display: flex;
-      border-bottom: 1px solid #e2e8f0;
-      background: #f8fafc;
-    }
-    .cotizar-tab {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      padding: 16px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #64748b;
-      background: none;
-      border: none;
-      border-bottom: 3px solid transparent;
-      cursor: pointer;
-      transition: color .2s, border-color .2s, background .2s;
-      white-space: nowrap;
-    }
-    .cotizar-tab:hover { color: #0F2B5B; background: #f1f5f9; }
-    .cotizar-tab.active { color: #1E8FFF; border-bottom-color: #1E8FFF; background: #fff; }
-
-    /* ── File drop zone ────────────────────────────────────── */
-    .file-drop-zone {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 32px 20px;
-      border: 2px dashed #cbd5e1;
-      border-radius: 14px;
-      background: #f8fafc;
-      cursor: pointer;
-      transition: border-color .2s, background .2s;
-      text-align: center;
-      font-size: 14px;
-      color: #64748b;
-    }
-    .file-drop-zone:hover, .file-drop-zone.drag-over { border-color: #1E8FFF; background: #eef6ff; }
-    .file-drop-zone.has-file { border-color: #22c55e; background: #f0fdf4; color: #166534; }
-
-    /* ── WhatsApp form button ──────────────────────────────── */
-    .btn-wa-form {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 14px 24px; background: #25D366; color: #fff;
-      font-size: 15px; font-weight: 700; border: none; border-radius: 12px;
-      cursor: pointer; text-decoration: none; transition: background .2s, transform .15s;
-    }
-    .btn-wa-form:hover { background: #1db954; transform: translateY(-1px); }
-
-    /* ── Hidden / Success ──────────────────────────────────── */
-    .hidden { display: none !important; }
-    .form-success {
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center; padding: 48px 24px; gap: 16px;
-    }
-    .form-success h3 { font-size: 1.4rem; font-weight: 800; color: #0F2B5B; }
-    .form-success p  { color: #64748b; font-size: .95rem; line-height: 1.6; max-width: 380px; }
-    .form-success a  { color: #1E8FFF; font-weight: 600; }
-
-    @media (max-width: 600px) {
-      .cotizar-tab { font-size: 11px; padding: 14px 6px; gap: 4px; }
-      .cotizar-tab svg { display: none; }
-    }
-  </style>
 </body>
 </html>
 

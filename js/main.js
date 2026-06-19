@@ -1,4 +1,6 @@
 // Page transitions
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 document.addEventListener('click', e => {
   const link = e.target.closest('a[href]');
   if (!link || link.target === '_blank') return;
@@ -46,12 +48,27 @@ if (navbar) {
 // Mobile hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
+const navItems = navLinks ? Array.from(navLinks.querySelectorAll('a')) : [];
+
+navItems.forEach((item, index) => {
+  item.style.setProperty('--nav-item-delay', `${index * 45}ms`);
+});
+
+const hasMainHero = Boolean(document.querySelector('.hero'));
+const updateNavbarState = () => {
+  if (!navbar) return;
+  navbar.classList.toggle('scrolled', !hasMainHero || window.scrollY > 16);
+};
+
+updateNavbarState();
+window.addEventListener('scroll', updateNavbarState, { passive: true });
+
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
   hamburger.classList.toggle('active');
   syncNavbarHeight();
 });
-navLinks.querySelectorAll('a').forEach(a => {
+navItems.forEach(a => {
   a.addEventListener('click', () => {
     navLinks.classList.remove('open');
     hamburger.classList.remove('active');
@@ -92,19 +109,32 @@ initSnapCarousel(document.querySelector('.reasons-grid'),            '.reason-ca
 initSnapCarousel(document.querySelector('.partners-grid'),           '.partner-logo-wrap', 2800);
 initSnapCarousel(document.querySelector('.mvv-grid'),                '.mvv-card',      3500);
 
-// Fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
+// Scroll reveal
+const revealObserver = prefersReducedMotion ? null : new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
 
-document.querySelectorAll(
-  '.product-card, .reason-card, .testimonial-card, .stat-card, .section-header'
-).forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
+const registerReveal = (selector, className = 'reveal-up', delayStep = 70, maxDelay = 320) => {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach((el, index) => {
+    el.classList.add(className);
+    el.style.setProperty('--reveal-delay', `${Math.min(index * delayStep, maxDelay)}ms`);
+
+    if (prefersReducedMotion) {
+      el.classList.add('visible');
+      return;
+    }
+
+    revealObserver.observe(el);
+  });
+};
+
+registerReveal('.section-header, .whyus-left, .partners-label, .contacto-info, .contacto-form-wrap, .map-wrap, .quote-contact-box, .form-card, .about-text, .about-image-wrap, .contact-banner-inner', 'reveal-up', 80, 180);
+registerReveal('.hero-stats .stat-card, .products-grid .product-card, .reasons-grid .reason-card, .services-grid .service-card, .info-items .info-item, .chart-item, .timeline-card', 'reveal-up', 75, 300);
+registerReveal('.partners-grid .partner-logo-wrap, .testimonials-grid .testimonial-card, .mvv-grid .mvv-card, .cta-strip-inner > *', 'reveal-scale', 85, 220);
