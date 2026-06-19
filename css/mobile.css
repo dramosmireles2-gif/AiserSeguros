@@ -204,19 +204,19 @@
   /* Footer móvil */
   .footer-mobile {
     display: block;
-    padding: 28px 0 8px;
+    padding: 18px 0 6px;
   }
   .footer-mobile-brand {
     text-align: center;
-    padding-bottom: 24px;
+    padding-bottom: 14px;
   }
   .footer-mobile-brand .footer-logo {
-    margin: 0 auto 10px;
-    height: 80px;
+    margin: 0 auto 8px;
+    height: 58px;
   }
   .footer-mobile-brand p {
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
   }
   .footer-divider {
@@ -224,44 +224,61 @@
     border-top: 1px solid rgba(255,255,255,0.1);
     margin: 0;
   }
-  .footer-mobile-section { padding: 20px 0; }
+  .footer-mobile-section { padding: 14px 0; }
   .footer-mobile-heading {
-    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;
   }
   .footer-mobile-heading svg { stroke: var(--blue); flex-shrink: 0; }
   .footer-mobile-heading span {
-    font-size: 11px; font-weight: 700; letter-spacing: .12em;
+    font-size: 10px; font-weight: 700; letter-spacing: .12em;
     color: rgba(255,255,255,0.5); text-transform: uppercase;
   }
   .footer-mobile-services {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px;
   }
   .footer-mobile-services a {
-    display: flex; align-items: center; gap: 8px;
-    color: #fff; font-size: 13px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    color: #fff; font-size: 12px; font-weight: 500;
+    text-align: center;
   }
   .footer-mobile-services a svg { stroke: var(--blue); flex-shrink: 0; }
-  .footer-mobile-btns { display: flex; flex-direction: column; gap: 10px; }
+  .footer-mobile-services-more {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 12px; color: var(--blue); font-size: 12px; font-weight: 700;
+    width: 100%; justify-content: center; text-align: center;
+  }
+  .footer-mobile-btns { display: flex; flex-direction: column; gap: 8px; }
   .footer-mobile-btn {
     display: flex; align-items: center; justify-content: center; gap: 10px;
-    padding: 14px 16px; border-radius: 12px;
-    font-size: 15px; font-weight: 700; color: #fff;
+    padding: 12px 14px; border-radius: 12px;
+    font-size: 14px; font-weight: 700; color: #fff;
     transition: opacity .2s;
+  }
+  .footer-mobile-actions-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .footer-mobile-btn-compact {
+    padding: 11px 10px; font-size: 13px; font-weight: 600;
   }
   .footer-mobile-btn:active { opacity: 0.85; }
   .fm-btn-blue  { background: var(--blue); }
   .fm-btn-green { background: #25D366; }
   .fm-btn-navy  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); }
-  .footer-mobile-schedule { color: rgba(255,255,255,0.85); font-size: 14px; }
+  .footer-mobile-meta {
+    margin-top: 4px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+  .footer-mobile-schedule { color: rgba(255,255,255,0.78); font-size: 12px; line-height: 1.5; }
 
   /* Footer bottom nav */
   .footer-bottom-nav {
     display: flex; align-items: center; justify-content: center;
-    gap: 10px; flex-wrap: wrap; padding-bottom: 8px;
+    gap: 8px; flex-wrap: wrap; padding-bottom: 4px;
   }
-  .footer-bottom-nav a   { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; }
-  .footer-bottom-nav span { color: rgba(255,255,255,0.3); font-size: 13px; }
+  .footer-bottom-nav a   { color: rgba(255,255,255,0.66); font-size: 12px; font-weight: 500; }
+  .footer-bottom-nav span { display: none; }
   .footer-bottom .container { flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+  .footer-bottom .container > span { font-size: 11px; color: rgba(255,255,255,0.62); }
   .footer-credit { display: none; }
 }
 
@@ -341,6 +358,10 @@
   .quote-layout { display: flex !important; flex-direction: column; }
   .form-card        { order: 1; }
   .quote-contact-box { order: 2; margin-top: 8px; }
+  .quote-contact-box { padding: 22px 18px 18px; gap: 12px; border-radius: 20px; }
+  .quote-contact-intro { font-size: 12px; }
+  .contact-item { padding: 12px; border-radius: 16px; }
+  .contact-value { font-size: 15px; }
 
   .form-card { border-radius: 16px; }
 }

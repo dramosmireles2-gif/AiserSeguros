@@ -64,41 +64,44 @@
         <!-- Info lateral -->
         <div class="quote-contact-box">
           <h3>¿Prefieres hablar directo?</h3>
+          <p class="quote-contact-intro">Te atendemos por llamada, WhatsApp o en oficina para ayudarte a cotizar más rápido.</p>
           <div class="contact-item">
             <div class="contact-icon-wrap">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             </div>
-            <div>
+            <div class="contact-copy">
               <span class="contact-label">Teléfono</span>
-              <a href="tel:8999250235">(899) 925-02-35</a>
+              <a href="tel:8999250235" class="contact-value">(899) 925-02-35</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon-wrap" style="background:#25D366">
+            <div class="contact-icon-wrap whatsapp-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
-            <div>
+            <div class="contact-copy">
               <span class="contact-label">WhatsApp</span>
-              <a href="https://wa.me/528999250235" target="_blank">(899) 925-02-35</a>
-              <a href="https://wa.me/528992181217" target="_blank">(899) 218-12-17</a>
+              <div class="contact-links">
+                <a href="https://wa.me/528999250235" target="_blank" class="contact-value">(899) 925-02-35</a>
+                <a href="https://wa.me/528992181217" target="_blank" class="contact-value">(899) 218-12-17</a>
+              </div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon-wrap">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <div>
+            <div class="contact-copy">
               <span class="contact-label">Dirección</span>
-              <span>Blvd. Lázaro Cárdenas #720<br>Col. Anzaldúas, Reynosa, Tam.</span>
+              <span class="contact-value">Blvd. Lázaro Cárdenas #720<br>Col. Anzaldúas, Reynosa, Tam.</span>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon-wrap">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <div>
+            <div class="contact-copy">
               <span class="contact-label">Horario</span>
-              <span>Lun–Vie: 9:00 – 13:30 / 14:00 – 18:00</span>
+              <span class="contact-value">Lun–Vie: 9:00 – 13:30<br>14:00 – 18:00</span>
             </div>
           </div>
 
@@ -185,7 +188,7 @@
                   <option value="Contado">Contado</option>
                 </select>
               </div>
-              <p class="form-note full">*El paquete de Responsabilidad Civil solo puede pagarse de Contado</p>
+              <p class="form-note full">Forma de pago disponible: Contado.</p>
               <div class="form-footer full">
                 <button type="submit" id="btnQuoteSubmit" class="btn-primary btn-lg" style="width:100%">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -311,11 +314,10 @@
         <div class="footer-mobile-services">
           <a href="servicios.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Autos y Pickups</a>
           <a href="servicios.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Vida y Hogar</a>
-          <a href="servicios.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 000-2h-1l-5 3H4a2 2 0 00-2 2v3h3a3.5 3.5 0 017 0h2a3.5 3.5 0 017 0h1v-4l-3-2-4-1z"/></svg>Motos y Taxis</a>
           <a href="servicios.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Empresas</a>
-          <a href="servicios.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Camiones y Trailers</a>
           <a href="cotizar-gmm-vida.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Gastos Médicos Mayores</a>
         </div>
+        <a href="servicios.html" class="footer-mobile-services-more">Ver todos los seguros</a>
       </div>
       <hr class="footer-divider" />
       <div class="footer-mobile-section">
@@ -324,18 +326,15 @@
           <span>Contacto</span>
         </div>
         <div class="footer-mobile-btns">
-          <a href="tel:8999250235" class="footer-mobile-btn fm-btn-blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Llamar: (899) 925-02-35</a>
           <a href="https://wa.me/528999250235" target="_blank" rel="noopener" class="footer-mobile-btn fm-btn-green"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
-          <a href="https://maps.google.com/?q=Blvd.+L%C3%A1zaro+C%C3%A1rdenas+720,+Anzald%C3%BAxas,+Reynosa,+Tamaulipas" target="_blank" rel="noopener" class="footer-mobile-btn fm-btn-navy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ver ubicación</a>
+          <div class="footer-mobile-actions-row">
+            <a href="tel:8999250235" class="footer-mobile-btn footer-mobile-btn-compact fm-btn-blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Llamar</a>
+            <a href="https://maps.google.com/?q=Blvd.+L%C3%A1zaro+C%C3%A1rdenas+720,+Anzald%C3%BAxas,+Reynosa,+Tamaulipas" target="_blank" rel="noopener" class="footer-mobile-btn footer-mobile-btn-compact fm-btn-navy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ubicación</a>
+          </div>
         </div>
-      </div>
-      <hr class="footer-divider" />
-      <div class="footer-mobile-section">
-        <div class="footer-mobile-heading">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Horario</span>
+        <div class="footer-mobile-meta">
+          <p class="footer-mobile-schedule">Lun–Vie: 9:00 – 13:30 | 14:00 – 18:00</p>
         </div>
-        <p class="footer-mobile-schedule">Lun–Vie: 9:00 – 13:30 | 14:00 – 18:00</p>
       </div>
     </div>
   </div>
