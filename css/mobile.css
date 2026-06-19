@@ -268,13 +268,6 @@
   .page-hero { padding: 110px 0 44px; }
   .page-hero-content h1 { font-size: 1.85rem; }
   .page-hero-content p  { font-size: 0.95rem; }
-
-  /* Hero split (acerca de) en móvil – apilado vertical */
-  .page-hero-split-inner { padding: 100px 0 52px; gap: 32px; }
-  .page-hero-text h1 { font-size: 1.85rem; }
-  .page-hero-text > p { font-size: 0.95rem; }
-  .about-highlights--hero { gap: 16px; flex-wrap: wrap; }
-  .about-highlights--hero .highlight-num { font-size: 1.6rem; }
 }
 
 /* ── 10. GRID DE SERVICIOS ── */

@@ -9,65 +9,14 @@
 /* ===== PAGE HERO ===== */
 .page-hero {
   background: linear-gradient(135deg, #0F2B5B 0%, #163d80 55%, #1E8FFF 100%);
-  padding: 0; position: relative; overflow: hidden;
+  padding: 140px 0 80px; position: relative; overflow: hidden; text-align: center;
 }
 .page-hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.page-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.page-hero-content h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; color: #fff; margin: 16px 0 20px; line-height: 1.1; }
+.page-hero-content p  { color: rgba(255,255,255,0.7); font-size: 1.15rem; line-height: 1.7; }
 
-/* ── Split (horizontal) hero ── */
-.page-hero--split { text-align: left; }
-
-.page-hero-split-inner {
-  position: relative; z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-  padding: 130px 0 80px;
-}
-
-.page-hero-text h1 {
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  font-weight: 900;
-  color: #fff;
-  margin: 16px 0 18px;
-  line-height: 1.1;
-}
-.page-hero-text > p {
-  color: rgba(255,255,255,0.75);
-  font-size: 1.1rem;
-  line-height: 1.75;
-}
-
-/* Highlights en hero – texto blanco */
-.about-highlights--hero {
-  display: flex; gap: 32px;
-  margin-top: 32px; padding-top: 28px;
-  border-top: 1px solid rgba(255,255,255,0.18);
-}
-.about-highlights--hero .highlight-num   { color: #fff; font-size: 2rem; font-weight: 900; line-height: 1; }
-.about-highlights--hero .highlight-label { color: rgba(255,255,255,0.65); font-size: 12px; margin-top: 4px; }
-
-/* Imagen derecha */
-.page-hero-img-wrap { position: relative; padding-bottom: 16px; }
-
-@media (max-width: 900px) {
-  .page-hero-split-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 110px 0 60px;
-    text-align: center;
-  }
-  .about-highlights--hero { justify-content: center; }
-  .page-hero-img-wrap { max-width: 480px; margin: 0 auto; }
-}
-
-/* ===== "QUIÉNES SOMOS" – texto sin imagen ===== */
-.about-text-only { max-width: 780px; }
-.about-text-only .section-tag { margin-bottom: 12px; }
-.about-text-only h2 { font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 900; color: var(--navy); margin-bottom: 20px; line-height: 1.2; }
-.about-text-only p  { color: #111; font-weight: 700; line-height: 1.8; margin-bottom: 16px; }
-
-/* ===== ABOUT GRID (legacy, keep for safety) ===== */
+/* ===== ABOUT GRID ===== */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
 @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
 .about-text .section-tag { margin-bottom: 12px; }
