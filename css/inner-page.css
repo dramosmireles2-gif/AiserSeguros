@@ -6,13 +6,14 @@
 /* Page hero */
 .page-hero {
   background: linear-gradient(135deg, #0F2B5B 0%, #163d80 55%, #1E8FFF 100%);
-  padding: 140px 0 80px; position: relative; overflow: hidden;
+  padding: 240px 0 80px; position: relative; overflow: hidden;
 }
-@media (max-width: 900px) { .page-hero { padding: 120px 0 60px; } }
+@media (max-width: 900px) { .page-hero { padding: 190px 0 60px; } }
 .page-hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 .page-hero-content { position: relative; z-index: 1; }
+.page-hero-content .section-tag { font-size: 16px; font-weight: 800; padding: 8px 22px; }
 .page-hero-content h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; color: #fff; margin: 12px 0 16px; line-height: 1.15; max-width: 900px; }
-.page-hero-content p  { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.7; }
+.page-hero-content p  { color: rgba(255,255,255,0.92); font-size: 1.3rem; font-weight: 700; line-height: 1.7; }
 
 /* Quote layout en cotizar.html */
 .quote-layout { display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start; }
