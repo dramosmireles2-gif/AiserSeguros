@@ -118,7 +118,7 @@
         <div class="reasons-grid">
           <div class="reason-card">
             <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-            <div><h4>38+ años de experiencia</h4><p>Más de 38 años asesorando familias y empresas.</p></div>
+            <div><h4><span data-counter="38">38</span>+ años de experiencia</h4><p>Más de 38 años asesorando familias y empresas.</p></div>
           </div>
           <div class="reason-card">
             <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
@@ -149,13 +149,21 @@
   <section class="section bg-light partners-section">
     <div class="container">
       <p class="partners-label">Trabajamos con las mejores aseguradoras del país</p>
-      <div class="partners-grid">
+    </div>
+    <div class="partners-ticker-wrap">
+      <div class="partners-track" id="partnersTicker">
         <div class="partner-logo-wrap"><img src="seguro-004.png" alt="Chubb" class="partner-logo" /></div>
         <div class="partner-logo-wrap"><img src="seguro-003.png" alt="Quálitas" class="partner-logo" /></div>
         <div class="partner-logo-wrap"><img src="seguro-002.png" alt="AXA" class="partner-logo partner-logo--sq" /></div>
         <div class="partner-logo-wrap"><img src="seguro-005.png" alt="Seguros Atlas" class="partner-logo" /></div>
         <div class="partner-logo-wrap"><img src="seguro-001.png" alt="Seguros Banorte" class="partner-logo" /></div>
         <div class="partner-logo-wrap"><img src="seguro-006.png" alt="New Horizon Seguros" class="partner-logo" /></div>
+        <div class="partner-logo-wrap" aria-hidden="true"><img src="seguro-004.png" alt="" class="partner-logo" /></div>
+        <div class="partner-logo-wrap" aria-hidden="true"><img src="seguro-003.png" alt="" class="partner-logo" /></div>
+        <div class="partner-logo-wrap" aria-hidden="true"><img src="seguro-002.png" alt="" class="partner-logo partner-logo--sq" /></div>
+        <div class="partner-logo-wrap" aria-hidden="true"><img src="seguro-005.png" alt="" class="partner-logo" /></div>
+        <div class="partner-logo-wrap" aria-hidden="true"><img src="seguro-001.png" alt="" class="partner-logo" /></div>
+        <div class="partner-logo-wrap" aria-hidden="true"><img src="seguro-006.png" alt="" class="partner-logo" /></div>
       </div>
     </div>
   </section>
@@ -295,6 +303,7 @@
 
   <script src="js/main.js"></script>
   <script src="js/carousel.js"></script>
+  <script type="module" src="js/animations.js"></script>
 </body>
 </html>
 

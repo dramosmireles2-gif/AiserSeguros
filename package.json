@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "sharp": "^0.35.1"
+  },
+  "dependencies": {
+    "motion": "^12.40.0"
   }
 }

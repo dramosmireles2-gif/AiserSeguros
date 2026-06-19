@@ -747,6 +747,39 @@ img { max-width: 100%; display: block; }
 .hero .carousel-dot { background: rgba(255,255,255,0.3); }
 .hero .carousel-dot.active { background: #fff; }
 
+/* ===== SCROLL PROGRESS BAR ===== */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+  transform-origin: left center;
+  transform: scaleX(0);
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* ===== PARTNER TICKER ===== */
+.partners-ticker-wrap {
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.partners-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+}
+.partners-track .partner-logo-wrap {
+  flex-shrink: 0;
+  width: 200px;
+  height: 140px;
+  padding: 24px 20px;
+}
+
 /* ===== ANIMATIONS ===== */
 .fade-in,
 .reveal-up,
