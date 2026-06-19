@@ -104,7 +104,6 @@ function initSnapCarousel(container, selector, interval) {
   container.addEventListener('touchend',   () => { timer = start(); });
 }
 
-initSnapCarousel(document.querySelector('.hero .carousel-viewport'), '.service-card',  3000);
 initSnapCarousel(document.querySelector('.reasons-grid'),            '.reason-card',   3200);
 initSnapCarousel(document.querySelector('.partners-grid'),           '.partner-logo-wrap', 2800);
 initSnapCarousel(document.querySelector('.mvv-grid'),                '.mvv-card',      3500);

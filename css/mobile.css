@@ -166,14 +166,16 @@
   }
   .partners-grid::-webkit-scrollbar { display: none; }
 
-  .partner-logo-wrap {
-    flex: 0 0 72%;
+  .partners-grid .partner-logo-wrap {
+    flex: 0 0 64%;
     scroll-snap-align: center;
-    height: 130px;
-    padding: 20px 16px;
+    min-width: 152px;
+    height: 116px;
+    padding: 18px 14px;
     border-radius: 14px;
   }
-  .partner-logo { max-height: 76px; }
+  .partners-grid .partner-logo { max-height: 64px; }
+  .partners-grid .partner-logo--sq { max-height: 72px; }
 }
 
 /* ── 7. CTA STRIP – botones en fila compacta ── */

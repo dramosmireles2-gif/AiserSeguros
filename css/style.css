@@ -780,6 +780,50 @@ img { max-width: 100%; display: block; }
   padding: 24px 20px;
 }
 
+@media (max-width: 900px) {
+  .partners-ticker-wrap {
+    padding: 4px 0;
+    mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  }
+
+  .partners-track {
+    gap: 14px;
+  }
+
+  .partners-track .partner-logo-wrap {
+    width: 170px;
+    height: 116px;
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .partners-track .partner-logo {
+    max-height: 64px;
+  }
+
+  .partners-track .partner-logo--sq {
+    max-height: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-track .partner-logo-wrap {
+    width: 152px;
+    height: 104px;
+    padding: 16px 14px;
+    border-radius: 13px;
+  }
+
+  .partners-track .partner-logo {
+    max-height: 56px;
+  }
+
+  .partners-track .partner-logo--sq {
+    max-height: 64px;
+  }
+}
+
 /* ===== ANIMATIONS ===== */
 .fade-in,
 .reveal-up,
