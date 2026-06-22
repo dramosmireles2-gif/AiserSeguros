@@ -1,0 +1,447 @@
+/* ===================================================
+   MOBILE STYLES — 320px – 767px
+   Desktop (768px+) no se toca.
+   =================================================== */
+
+/* ── 1. ESPACIADO GLOBAL ── */
+@media (max-width: 767px) {
+  .section         { padding: 36px 0; }
+  .partners-section { padding: 24px 0; }
+  .cta-strip       { padding: 36px 0; }
+  .section-header  { margin-bottom: 28px; }
+  .section-header h2 { font-size: 1.85rem; }
+  .section-header p  { font-size: 1rem; }
+
+}
+
+/* ── TABLET (768px – 900px) ── */
+@media (min-width: 768px) and (max-width: 900px) {
+  .logo-img { height: 140px; }
+  .hero { min-height: auto; padding-bottom: 48px; }
+
+}
+
+/* ── 2. NAVBAR – layout centrado (móvil + tablet) ── */
+@media (max-width: 900px) {
+  .navbar { padding: 8px 0; }
+  .nav-inner {
+    position: relative;
+    justify-content: center;
+  }
+  .hamburger {
+    position: absolute;
+    right: 16px;
+  }
+}
+
+/* Logo en móvil puro (≤767px) */
+@media (max-width: 767px) {
+  .logo-img { height: 96px; }
+}
+
+/* ── NAVBAR – CTA "Cotizar" visible dentro del menú móvil ── */
+.nav-mobile-cta { display: none; }
+
+@media (max-width: 900px) {
+  .nav-mobile-cta {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 13px 20px !important;
+    background: linear-gradient(135deg, #FF6B2B, #ff8c55) !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    border-radius: 10px;
+    border-bottom: none !important;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(255,107,43,0.3);
+  }
+  .nav-mobile-cta:hover { opacity: 0.9; background: none; }
+  .nav-mobile-cta::after { display: none !important; }
+}
+
+/* ── 3. HERO ── */
+@media (max-width: 767px) {
+  .hero { min-height: auto; padding-top: 28px; }
+
+  .hero-content { padding: 0 0 48px; }
+
+  .hero-badge    { font-size: 11px; padding: 5px 12px; margin-bottom: 14px; letter-spacing: .02em; }
+  .hero-title    { font-size: 2.2rem; margin-bottom: 14px; }
+  .hero-desc     { font-size: 1rem; margin-bottom: 22px; }
+
+  /* Botones hero en fila compacta */
+  .hero-btns {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding: 0 12px;
+  }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-outline {
+    flex: 1;
+    justify-content: center;
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  /* Stats en cuadrícula 2×2 */
+  .hero-stats { gap: 10px; }
+  .stat-card {
+    min-width: calc(50% - 5px);
+    flex: 1 1 calc(50% - 5px);
+    padding: 14px 10px;
+  }
+  .stat-num   { font-size: 1.6rem; }
+  .stat-label { font-size: 11px; }
+
+  /* Carousel de servicios */
+  .carousel-dots    { display: none; }
+  .carousel-label   { font-size: 10px; letter-spacing: .08em; margin-bottom: 8px; }
+  .carousel-wrap    { gap: 6px; padding: 0 4px; }
+  .hero .carousel-btn { display: none; }
+
+  /* Scroll-snap en móvil: reemplaza el JS transform */
+  .hero .carousel-viewport {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .hero .carousel-viewport::-webkit-scrollbar { display: none; }
+  .hero .carousel-track {
+    transform: none !important;
+    transition: none !important;
+    padding: 0 11%;
+    gap: 14px;
+  }
+  .hero .carousel-track .service-card {
+    flex: 0 0 78%;
+    scroll-snap-align: center;
+  }
+  .hero .service-card { border-radius: 18px; }
+  .hero .service-card .service-photo { height: 120px; }
+  .hero .service-card span { font-size: 12px; font-weight: 700; }
+
+  .scroll-down { bottom: 16px; }
+}
+
+/* ── 4. ¿POR QUÉ AISER? ── */
+@media (max-width: 767px) {
+  .whyus-grid      { gap: 32px; }
+  .whyus-statement { font-size: 1.05rem; margin-top: 12px; }
+  .mini-stats      { gap: 16px; }
+  .mini-num        { font-size: 1.6rem; }
+}
+
+/* ── 5. CARDS DE RAZONES – carrusel horizontal en móvil ── */
+@media (max-width: 767px) {
+  .reasons-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    padding: 4px 2px 12px;
+    grid-template-columns: unset;
+  }
+  .reasons-grid::-webkit-scrollbar { display: none; }
+
+  .reason-card {
+    flex: 0 0 78%;
+    scroll-snap-align: center;
+    padding: 16px;
+    gap: 12px;
+  }
+  .reason-card h4 { font-size: 14px; }
+  .reason-card p  { font-size: 12px; }
+  .reason-icon { width: 42px; height: 42px; border-radius: 11px; }
+}
+
+/* ── 6. ASEGURADORAS (partners) – carrusel horizontal en móvil ── */
+@media (max-width: 767px) {
+  .partners-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    padding: 4px 2px 12px;
+    grid-template-columns: unset;
+  }
+  .partners-grid::-webkit-scrollbar { display: none; }
+
+  .partners-grid .partner-logo-wrap {
+    flex: 0 0 64%;
+    scroll-snap-align: center;
+    min-width: 152px;
+    height: 116px;
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+  .partners-grid .partner-logo { max-height: 64px; }
+  .partners-grid .partner-logo--sq { max-height: 72px; }
+}
+
+/* ── 7. CTA STRIP – botones en fila compacta ── */
+@media (max-width: 767px) {
+  .cta-strip-btns {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0 12px;
+  }
+  .cta-strip-btns .btn-primary,
+  .cta-strip-btns .btn-wa-cta {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+}
+
+/* ── 8. FOOTER ── */
+.footer-mobile  { display: none; }
+.footer-bottom-nav { display: none; }
+
+@media (max-width: 900px) {
+  .footer-grid { display: none; }
+
+  /* Footer móvil (visible en tablet y móvil) */
+  .footer-mobile {
+    display: block;
+    padding: 18px 0 6px;
+  }
+  .footer-mobile-brand {
+    text-align: center;
+    padding-bottom: 14px;
+  }
+  .footer-mobile-brand .footer-logo {
+    margin: 0 auto 8px;
+    height: 58px;
+  }
+  .footer-mobile-brand p {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 0;
+  }
+  .footer-mobile-section { padding: 14px 0; }
+  .footer-mobile-heading {
+    display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;
+  }
+  .footer-mobile-heading svg { stroke: var(--blue); flex-shrink: 0; }
+  .footer-mobile-heading span {
+    font-size: 10px; font-weight: 700; letter-spacing: .12em;
+    color: rgba(255,255,255,0.5); text-transform: uppercase;
+  }
+  .footer-mobile-services {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px;
+  }
+  .footer-mobile-services a {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    color: #fff; font-size: 12px; font-weight: 500;
+    text-align: center;
+  }
+  .footer-mobile-services a svg { stroke: var(--blue); flex-shrink: 0; }
+  .footer-mobile-services-more {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 12px; color: var(--blue); font-size: 12px; font-weight: 700;
+    width: 100%; justify-content: center; text-align: center;
+  }
+  .footer-mobile-btns { display: flex; flex-direction: column; gap: 8px; }
+  .footer-mobile-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 12px 14px; border-radius: 12px;
+    font-size: 14px; font-weight: 700; color: #fff;
+    transition: opacity .2s;
+  }
+  .footer-mobile-actions-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .footer-mobile-btn-compact {
+    padding: 11px 10px; font-size: 13px; font-weight: 600;
+  }
+  .footer-mobile-btn:active { opacity: 0.85; }
+  .fm-btn-blue  { background: var(--blue); }
+  .fm-btn-green { background: #25D366; }
+  .fm-btn-navy  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); }
+  .footer-mobile-meta {
+    margin-top: 4px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+  .footer-mobile-schedule { color: rgba(255,255,255,0.78); font-size: 12px; line-height: 1.5; }
+
+  /* Footer bottom nav */
+  .footer-bottom-nav {
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; flex-wrap: wrap; padding-bottom: 4px;
+  }
+  .footer-bottom-nav a   { color: rgba(255,255,255,0.66); font-size: 12px; font-weight: 500; }
+  .footer-bottom-nav span { display: none; }
+  .footer-bottom .container { flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+  .footer-bottom .container > span { font-size: 11px; color: rgba(255,255,255,0.62); }
+  .footer-credit { display: none; }
+}
+
+/* ── 9. PAGE HERO (páginas internas) ── */
+@media (max-width: 767px) {
+  .page-hero { padding: 28px 0 24px; }
+  .page-hero-content { text-align: left; }
+  .page-hero-content .section-tag { font-size: 13px; padding: 6px 14px; }
+  .page-hero-content h1 { font-size: 1.5rem; margin: 8px 0 8px; }
+  .page-hero-content p  { font-size: 0.88rem; font-weight: 500; line-height: 1.6; }
+
+}
+
+/* ── 10. GRID DE SERVICIOS ── */
+@media (max-width: 767px) {
+  .services-category   { margin-bottom: 32px; }
+  .category-title      { font-size: 1rem; }
+  .services-grid       { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .service-card        { border-radius: 14px; }
+  .service-photo       { height: 90px; }
+  .service-card span   { font-size: 12px; padding: 8px 8px 10px; }
+}
+
+/* ── 11. ACERCA DE – about grid ── */
+@media (max-width: 767px) {
+  .about-text h2        { color: var(--navy); }
+  .about-text p         { font-size: 0.95rem; line-height: 1.7; color: #112448; }
+  .about-highlights     { gap: 20px; flex-wrap: wrap; }
+  .highlight            { flex: 1; min-width: 72px; }
+  .highlight-num        { font-size: 1.8rem; }
+  .about-image-wrap     { margin-top: 4px; }
+  .about-image-badge    { font-size: 12px; padding: 8px 14px; right: 16px; }
+}
+
+/* ── 12. MVV (misión, visión, valores) – carrusel horizontal en móvil ── */
+@media (max-width: 767px) {
+  .mvv-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    padding: 4px 2px 14px;
+    grid-template-columns: unset;
+  }
+  .mvv-grid::-webkit-scrollbar { display: none; }
+
+  .mvv-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+    padding: 28px 20px;
+  }
+}
+
+/* ── 13. CHARTS (gráficas de anillos) ── */
+@media (max-width: 767px) {
+  .charts-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .chart-ring-wrap { width: 110px; height: 110px; }
+  .chart-ring      { width: 110px; height: 110px; }
+  .chart-num       { font-size: 1.3rem; }
+  .chart-item h4   { font-size: 13px; }
+  .chart-item p    { font-size: 12px; }
+}
+
+/* ── 14. TIMELINE ── */
+@media (max-width: 767px) {
+  .timeline-card { padding: 18px; }
+  .timeline-card h4 { font-size: 14px; }
+  .timeline-card p  { font-size: 12px; }
+}
+
+/* ── 15. FORMULARIO COTIZAR ── */
+@media (max-width: 767px) {
+  /* Formulario primero, info de contacto después */
+  .quote-layout { display: flex !important; flex-direction: column; }
+  .form-card        { order: 1; }
+  .quote-contact-box { order: 2; margin-top: 8px; }
+  .quote-contact-box { padding: 22px 18px 18px; gap: 12px; border-radius: 20px; }
+  .quote-contact-intro { font-size: 12px; }
+  .contact-item { padding: 12px; border-radius: 16px; }
+  .contact-value { font-size: 15px; }
+
+  .form-card { border-radius: 16px; }
+}
+
+@media (max-width: 600px) {
+  .form-card { padding: 20px 16px !important; }
+}
+
+/* Tabs de cotizar – scroll horizontal en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .cotizar-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .cotizar-tabs::-webkit-scrollbar { display: none; }
+  .cotizar-tab {
+    flex: 0 0 auto;
+    min-width: 108px;
+    font-size: 11px;
+    padding: 13px 8px;
+  }
+}
+
+/* ── 16. CONTACTO ── */
+@media (max-width: 767px) {
+  .info-icon  { width: 40px; height: 40px; border-radius: 12px; }
+  .info-value { font-size: 14px; }
+  .contact-banner-inner    { gap: 14px; }
+  .contact-banner-phones   { flex-direction: column; gap: 10px; }
+}
+
+/* ── 17. BOTÓN FLOTANTE WHATSAPP ── */
+@media (max-width: 767px) {
+  .wa-btn { width: 50px; height: 50px; }
+  .wa-btn svg { width: 24px; height: 24px; }
+}
+
+/* ── 18. TESTIMONIALS ── */
+@media (max-width: 767px) {
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+  .testimonial-card  { padding: 22px 18px; }
+  .testimonial-card p { font-size: 13px; }
+}
+
+/* ── 20. PRODUCT CARDS (home) ── */
+@media (max-width: 767px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .product-card  { padding: 22px 18px; }
+  .product-icon  { width: 44px; height: 44px; margin-bottom: 12px; }
+  .product-card h3 { font-size: 14px; }
+  .product-card p  { font-size: 12px; }
+}
+
+@media (max-width: 400px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+
+/* ── TABLET: footer móvil texto +20% (va al final para ganar la cascada) ── */
+@media (min-width: 768px) and (max-width: 900px) {
+  .footer-mobile-brand p        { font-size: 15.6px; }
+  .footer-mobile-heading span   { font-size: 12px; }
+  .footer-mobile-services a     { font-size: 14.4px; }
+  .footer-mobile-services-more  { font-size: 14.4px; }
+  .footer-mobile-btn            { font-size: 16.8px; padding: 14px 16px; }
+  .footer-mobile-btn-compact    { font-size: 15.6px; }
+  .footer-mobile-schedule       { font-size: 14.4px; }
+  .footer-bottom-nav a          { font-size: 14.4px; }
+  .footer-bottom .container > span { font-size: 13.2px; }
+}
