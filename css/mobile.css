@@ -14,9 +14,15 @@
 
 }
 
-/* ── 2. NAVBAR – logo centrado en móvil ── */
+/* ── TABLET (768px – 900px) ── */
+@media (min-width: 768px) and (max-width: 900px) {
+  .logo-img { height: 140px; }
+  .hero { min-height: auto; padding-bottom: 48px; }
+
+}
+
+/* ── 2. NAVBAR – layout centrado (móvil + tablet) ── */
 @media (max-width: 900px) {
-  .logo-img { height: 48px; }
   .navbar { padding: 8px 0; }
   .nav-inner {
     position: relative;
@@ -26,6 +32,11 @@
     position: absolute;
     right: 16px;
   }
+}
+
+/* Logo en móvil puro (≤767px) */
+@media (max-width: 767px) {
+  .logo-img { height: 96px; }
 }
 
 /* ── NAVBAR – CTA "Cotizar" visible dentro del menú móvil ── */
@@ -200,10 +211,10 @@
 .footer-mobile  { display: none; }
 .footer-bottom-nav { display: none; }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .footer-grid { display: none; }
 
-  /* Footer móvil */
+  /* Footer móvil (visible en tablet y móvil) */
   .footer-mobile {
     display: block;
     padding: 18px 0 6px;
@@ -420,4 +431,17 @@
 
 @media (max-width: 400px) {
   .products-grid { grid-template-columns: 1fr; }
+}
+
+/* ── TABLET: footer móvil texto +20% (va al final para ganar la cascada) ── */
+@media (min-width: 768px) and (max-width: 900px) {
+  .footer-mobile-brand p        { font-size: 15.6px; }
+  .footer-mobile-heading span   { font-size: 12px; }
+  .footer-mobile-services a     { font-size: 14.4px; }
+  .footer-mobile-services-more  { font-size: 14.4px; }
+  .footer-mobile-btn            { font-size: 16.8px; padding: 14px 16px; }
+  .footer-mobile-btn-compact    { font-size: 15.6px; }
+  .footer-mobile-schedule       { font-size: 14.4px; }
+  .footer-bottom-nav a          { font-size: 14.4px; }
+  .footer-bottom .container > span { font-size: 13.2px; }
 }
