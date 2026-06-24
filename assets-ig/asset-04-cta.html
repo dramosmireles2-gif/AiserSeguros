@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RMKT — Asset 04 · CTA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #111;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 32px 20px 48px; min-height: 100vh; font-family: 'Inter', sans-serif;
+  }
+  .page-label { color: rgba(255,255,255,0.3); font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+  .scaler { transform-origin: top center; }
+  .dl-btn {
+    margin-top: 28px; background: #00FF88; color: #0A0A0A; border: none;
+    padding: 14px 40px; border-radius: 8px; font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+  }
+  .dl-btn:hover { background: #00e67a; }
+  .dl-btn:disabled { opacity: .6; cursor: default; }
+
+  /* ═══════════════════════════════════════════════════════
+     ASSET  1080 × 1350
+  ═══════════════════════════════════════════════════════ */
+  #a4 {
+    width: 1080px; height: 1350px;
+    background: #0A0A0A;
+    position: relative; overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  /* Background */
+  .dot-grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.038) 1px, transparent 1px); background-size: 28px 28px; }
+  .glow-center {
+    position: absolute; width: 800px; height: 800px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,255,136,0.11) 0%, rgba(0,255,136,0.04) 40%, transparent 70%);
+    filter: blur(60px);
+  }
+
+  /* All 4 corner brackets */
+  .cb { position: absolute; width: 44px; height: 44px; border-color: rgba(0,255,136,0.22); border-style: solid; }
+  .cb-tl { top: 54px; left: 54px; border-width: 2px 0 0 2px; }
+  .cb-tr { top: 54px; right: 54px; border-width: 2px 2px 0 0; }
+  .cb-br { bottom: 54px; right: 54px; border-width: 0 2px 2px 0; }
+  .cb-bl { bottom: 54px; left: 54px; border-width: 0 0 2px 2px; }
+
+  /* Center content */
+  .center { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 80px; }
+
+  /* RMKT big logo */
+  .rmkt-big { display: flex; flex-direction: column; align-items: center; margin-bottom: 60px; }
+  .rmkt-big-row { display: flex; align-items: center; gap: 10px; }
+  .rmkt-big-dot { width: 14px; height: 14px; border-radius: 50%; background: #00FF88; box-shadow: 0 0 20px rgba(0,255,136,0.6), 0 0 40px rgba(0,255,136,0.3); }
+  .rmkt-big-word { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 48px; color: #fff; letter-spacing: 8px; }
+  .rmkt-big-sub { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.3); letter-spacing: 7px; margin-top: 8px; text-transform: uppercase; }
+
+  /* Separator */
+  .h-sep {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,255,136,0.3), transparent);
+    margin-bottom: 56px;
+  }
+
+  /* CTA headline */
+  .cta-hl { font-weight: 900; font-size: 86px; line-height: 1.0; text-align: center; margin-bottom: 20px; }
+  .cta-w { color: #fff; display: block; }
+  .cta-g { color: #00FF88; display: block; text-shadow: 0 0 50px rgba(0,255,136,0.4), 0 0 100px rgba(0,255,136,0.15); }
+
+  .cta-body { font-family: 'Inter', sans-serif; font-size: 18px; color: rgba(255,255,255,0.45); text-align: center; margin-bottom: 56px; line-height: 1.5; }
+
+  /* Contact cards */
+  .contact-grid { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+  .ccard {
+    display: flex; align-items: center; gap: 20px;
+    padding: 20px 28px; border-radius: 16px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,255,136,0.1);
+  }
+  .ccard:hover { border-color: rgba(0,255,136,0.25); }
+  .ccard-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    background: rgba(0,255,136,0.09);
+    border: 1px solid rgba(0,255,136,0.18);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ccard-icon svg { color: #00FF88; }
+  .ccard-inner { display: flex; flex-direction: column; gap: 3px; }
+  .ccard-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.35); letter-spacing: 2px; text-transform: uppercase; }
+  .ccard-value { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 19px; color: #fff; }
+
+  /* Services tag row */
+  .svc-row { display: flex; gap: 10px; justify-content: center; margin-top: 48px; }
+  .svc-tag {
+    padding: 8px 18px; border-radius: 100px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.45); letter-spacing: 2px; text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<p class="page-label">RMKT · asset-04-cta · Post 1080×1350px</p>
+
+<div class="scaler" id="scaler">
+<div id="a4">
+  <div class="dot-grid"></div>
+  <div class="glow-center"></div>
+  <div class="cb cb-tl"></div>
+  <div class="cb cb-tr"></div>
+  <div class="cb cb-br"></div>
+  <div class="cb cb-bl"></div>
+
+  <div class="center">
+    <!-- Big RMKT logo -->
+    <div class="rmkt-big">
+      <div class="rmkt-big-row">
+        <div class="rmkt-big-dot"></div>
+        <span class="rmkt-big-word">RMKT</span>
+      </div>
+      <div class="rmkt-big-sub">Ramos · Digital</div>
+    </div>
+
+    <div class="h-sep"></div>
+
+    <!-- CTA Headline -->
+    <div class="cta-hl">
+      <span class="cta-w">¿Tu negocio</span>
+      <span class="cta-w">también lo</span>
+      <span class="cta-g">necesita?</span>
+    </div>
+
+    <div class="cta-body">Diseñamos y desarrollamos sitios web que generan<br>resultados reales para tu negocio.</div>
+
+    <!-- Contact cards -->
+    <div class="contact-grid">
+      <!-- WhatsApp -->
+      <div class="ccard">
+        <div class="ccard-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <div class="ccard-inner">
+          <div class="ccard-label">WhatsApp</div>
+          <div class="ccard-value">814 807 8309</div>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="ccard">
+        <div class="ccard-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+        <div class="ccard-inner">
+          <div class="ccard-label">Instagram</div>
+          <div class="ccard-value">@ramos_mkt.rex</div>
+        </div>
+      </div>
+
+      <!-- Web -->
+      <div class="ccard">
+        <div class="ccard-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="ccard-inner">
+          <div class="ccard-label">Sitio web</div>
+          <div class="ccard-value">ramosmkt.lat</div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="ccard">
+        <div class="ccard-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="ccard-inner">
+          <div class="ccard-label">Correo</div>
+          <div class="ccard-value" style="font-size:17px;">dramosmirele2@ramosmkt.lat</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services tags -->
+    <div class="svc-row">
+      <div class="svc-tag">Web</div>
+      <div class="svc-tag">Branding</div>
+      <div class="svc-tag">Apps</div>
+      <div class="svc-tag">Digital</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<button class="dl-btn" id="dlBtn" onclick="dl()">Descargar PNG</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+  (function scale() {
+    const s = document.getElementById('scaler');
+    const v = Math.min(window.innerWidth - 48, 680) / 1080;
+    s.style.transform = `scale(${v})`;
+    s.style.marginBottom = `${(1350 * v) - 1350 + 16}px`;
+  })();
+
+  async function dl() {
+    const btn = document.getElementById('dlBtn');
+    btn.textContent = 'Generando…'; btn.disabled = true;
+    await document.fonts.ready;
+    const c = await html2canvas(document.getElementById('a4'), {
+      scale: 1, useCORS: true, allowTaint: true,
+      backgroundColor: '#0A0A0A', logging: false
+    });
+    const a = document.createElement('a');
+    a.download = 'rmkt-aiser-04-cta.png';
+    a.href = c.toDataURL('image/png', 1.0);
+    a.click();
+    btn.textContent = 'Descargar PNG'; btn.disabled = false;
+  }
+</script>
+</body>
+</html>
