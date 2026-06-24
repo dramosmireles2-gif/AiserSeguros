@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RMKT — Asset 02 · Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #111;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 32px 20px 48px; min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+  }
+  .page-label { color: rgba(255,255,255,0.3); font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+  .scaler { transform-origin: top center; }
+  .dl-btn {
+    margin-top: 28px; background: #00FF88; color: #0A0A0A; border: none;
+    padding: 14px 40px; border-radius: 8px; font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+  }
+  .dl-btn:hover { background: #00e67a; }
+  .dl-btn:disabled { opacity: .6; cursor: default; }
+
+  /* ═══════════════════════════════════════════════════════
+     ASSET  1080 × 1350
+  ═══════════════════════════════════════════════════════ */
+  #a2 {
+    width: 1080px; height: 1350px;
+    background: #0A0A0A;
+    position: relative; overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  /* Gradient mesh bg */
+  .mesh {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 10% 90%, rgba(0,255,136,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 60% at 90% 10%, rgba(30,143,255,0.06) 0%, transparent 60%);
+  }
+  .dot-grid {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* Corner brackets */
+  .cb { position: absolute; width: 38px; height: 38px; border-color: rgba(0,255,136,0.2); border-style: solid; }
+  .cb-tl { top: 48px; left: 48px; border-width: 2px 0 0 2px; }
+  .cb-br { bottom: 48px; right: 48px; border-width: 0 2px 2px 0; }
+
+  /* Top bar */
+  .topbar { position: absolute; top: 48px; left: 80px; right: 80px; display: flex; align-items: center; justify-content: space-between; }
+  .rmkt { display: flex; flex-direction: column; }
+  .rmkt-row { display: flex; align-items: center; gap: 7px; }
+  .rmkt-dot { width: 8px; height: 8px; border-radius: 50%; background: #00FF88; flex-shrink: 0; }
+  .rmkt-word { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 17px; color: #fff; letter-spacing: 3.5px; }
+  .rmkt-sub { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 8.5px; color: rgba(255,255,255,0.32); letter-spacing: 5px; margin-top: 4px; text-transform: uppercase; }
+  .type-tag {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+    color: rgba(255,255,255,0.35); letter-spacing: 2.5px; text-transform: uppercase;
+  }
+  .type-tag-dot { width: 5px; height: 5px; border-radius: 50%; background: #00FF88; }
+
+  /* ── BROWSER FRAME ── */
+  .browser-wrap {
+    position: absolute;
+    top: 148px; left: 80px; right: 80px;
+  }
+  .browser {
+    background: #161616;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04), 0 0 60px rgba(0,255,136,0.06);
+  }
+  .browser-bar {
+    background: #1c1c1c;
+    height: 38px;
+    display: flex; align-items: center; padding: 0 16px; gap: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .b-dots { display: flex; gap: 7px; }
+  .b-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .d-r { background: #ff5f57; } .d-y { background: #febc2e; } .d-g { background: #28c840; }
+  .url-bar {
+    flex: 1; background: rgba(255,255,255,0.06); border-radius: 5px;
+    height: 24px; display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    color: rgba(255,255,255,0.3); letter-spacing: 0.5px;
+  }
+
+  /* Mini AISER site */
+  .mock-site { overflow: hidden; }
+  .m-nav {
+    background: #0F2B5B;
+    padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .m-logo { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 14px; color: #fff; letter-spacing: 1px; }
+  .m-logo span { color: #1E8FFF; }
+  .m-menu { display: flex; gap: 20px; }
+  .m-menu-item { font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.65); }
+  .m-cta-btn {
+    background: #FF6B2B; padding: 7px 16px; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; color: #fff;
+  }
+
+  .m-hero {
+    background: linear-gradient(145deg, #0F2B5B 0%, #0d3068 50%, #0f2456 100%);
+    padding: 28px 24px 20px;
+  }
+  .m-badge-h {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(30,143,255,0.15); border: 1px solid rgba(30,143,255,0.25);
+    border-radius: 20px; padding: 4px 12px;
+    font-family: 'Inter', sans-serif; font-size: 9px; color: #7EC8FF; margin-bottom: 14px;
+  }
+  .m-h1 {
+    font-family: 'Manrope', sans-serif; font-weight: 900;
+    font-size: 22px; color: #fff; line-height: 1.2; margin-bottom: 6px;
+  }
+  .m-h1 span { color: #1E8FFF; }
+  .m-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 18px; }
+  .m-btns { display: flex; gap: 10px; margin-bottom: 22px; }
+  .m-btn-p { background: #FF6B2B; padding: 8px 18px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; color: #fff; }
+  .m-btn-o { border: 1px solid rgba(255,255,255,0.28); padding: 8px 18px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.8); }
+
+  .m-cards { display: flex; gap: 10px; }
+  .m-card {
+    flex: 1; background: rgba(255,255,255,0.07); border-radius: 10px;
+    padding: 10px 8px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .m-card-icon {
+    width: 24px; height: 24px; border-radius: 6px;
+    margin: 0 auto 6px;
+  }
+  .ic-blue { background: rgba(30,143,255,0.25); }
+  .ic-orange { background: rgba(255,107,43,0.25); }
+  .ic-teal { background: rgba(0,200,150,0.2); }
+  .m-card-label { font-family: 'Inter', sans-serif; font-size: 9px; color: rgba(255,255,255,0.65); }
+
+  .m-stats {
+    background: #F5F7FA;
+    padding: 14px 24px;
+    display: flex; justify-content: space-around;
+  }
+  .m-stat { text-align: center; }
+  .m-stat-n { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 20px; color: #0F2B5B; }
+  .m-stat-l { font-family: 'Inter', sans-serif; font-size: 9px; color: #6b7280; margin-top: 2px; }
+
+  .m-why {
+    background: #fff; padding: 16px 24px;
+    display: flex; gap: 12px;
+  }
+  .m-why-card {
+    flex: 1; background: #F5F7FA; border-radius: 8px; padding: 12px 10px;
+  }
+  .m-why-icon { width: 20px; height: 20px; background: #0F2B5B; border-radius: 4px; margin-bottom: 8px; }
+  .m-why-title { font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 700; color: #0F2B5B; margin-bottom: 4px; }
+  .m-why-text { font-family: 'Inter', sans-serif; font-size: 8px; color: #6b7280; line-height: 1.4; }
+
+  /* ── PHONE FRAME (overlay) ── */
+  .phone-wrap {
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+  }
+  .phone {
+    width: 180px; height: 360px;
+    background: #181818;
+    border-radius: 28px;
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: -20px 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(0,255,136,0.08);
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-notch {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 72px; height: 22px;
+    background: #181818; border-radius: 0 0 14px 14px; z-index: 2;
+  }
+  .phone-screen { position: absolute; inset: 0; overflow: hidden; }
+  .p-nav { background: #0F2B5B; height: 30px; display: flex; align-items: flex-end; padding: 0 12px 6px; padding-top: 22px; }
+  .p-logo { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 9px; color: #fff; letter-spacing: 0.5px; }
+  .p-ham { margin-left: auto; display: flex; flex-direction: column; gap: 3px; }
+  .p-ham span { width: 14px; height: 1.5px; background: rgba(255,255,255,0.7); border-radius: 2px; }
+  .p-hero { background: linear-gradient(160deg, #0F2B5B, #0d3068); padding: 12px 12px 10px; }
+  .p-h1 { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 13px; color: #fff; line-height: 1.25; margin-bottom: 8px; }
+  .p-h1 span { color: #1E8FFF; }
+  .p-btn { background: #FF6B2B; padding: 6px 12px; border-radius: 5px; display: inline-block; font-family: 'Inter', sans-serif; font-size: 8px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .p-cards { display: flex; gap: 6px; }
+  .p-card { flex: 1; background: rgba(255,255,255,0.07); border-radius: 7px; padding: 7px 4px; text-align: center; }
+  .p-card-box { width: 16px; height: 16px; border-radius: 4px; margin: 0 auto 4px; }
+  .p-card-lbl { font-family: 'Inter', sans-serif; font-size: 7px; color: rgba(255,255,255,0.65); }
+  .p-body { background: #fff; padding: 12px; }
+  .p-section-title { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 10px; color: #0F2B5B; margin-bottom: 8px; }
+  .p-item { display: flex; align-items: center; gap: 7px; margin-bottom: 7px; }
+  .p-item-icon { width: 22px; height: 22px; background: #F5F7FA; border-radius: 5px; flex-shrink: 0; }
+  .p-item-text { font-family: 'Inter', sans-serif; font-size: 8px; color: #374151; line-height: 1.3; }
+
+  /* Project info below browser */
+  .proj-info {
+    position: absolute;
+    bottom: 88px; left: 80px; right: 80px;
+  }
+  .proj-name {
+    font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 34px; color: #fff;
+    margin-bottom: 8px;
+  }
+  .proj-sub {
+    font-family: 'Inter', sans-serif; font-size: 15px; color: rgba(255,255,255,0.42);
+    margin-bottom: 20px; letter-spacing: 0.5px;
+  }
+  .color-pills { display: flex; gap: 10px; }
+  .cpill {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 14px; border-radius: 100px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.5);
+  }
+  .cs { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* Bottom bar */
+  .botbar { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 80px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.055); }
+  .bot-handle { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.38); }
+</style>
+</head>
+<body>
+<p class="page-label">RMKT · asset-02-showcase · Post 1080×1350px</p>
+
+<div class="scaler" id="scaler">
+<div id="a2">
+  <div class="mesh"></div>
+  <div class="dot-grid"></div>
+  <div class="cb cb-tl"></div>
+  <div class="cb cb-br"></div>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="rmkt">
+      <div class="rmkt-row"><div class="rmkt-dot"></div><span class="rmkt-word">RMKT</span></div>
+      <div class="rmkt-sub">Ramos · Digital</div>
+    </div>
+    <div class="type-tag">
+      <div class="type-tag-dot"></div>
+      Diseño Web · Institucional
+    </div>
+  </div>
+
+  <!-- Browser + phone wrapper -->
+  <div class="browser-wrap">
+    <div class="browser">
+      <!-- Chrome bar -->
+      <div class="browser-bar">
+        <div class="b-dots">
+          <div class="b-dot d-r"></div>
+          <div class="b-dot d-y"></div>
+          <div class="b-dot d-g"></div>
+        </div>
+        <div class="url-bar">aiserseguros.mx</div>
+      </div>
+      <!-- Mini AISER site content -->
+      <div class="mock-site">
+        <div class="m-nav">
+          <div class="m-logo">AISER <span>SEGUROS</span></div>
+          <div class="m-menu">
+            <span class="m-menu-item">Inicio</span>
+            <span class="m-menu-item">Servicios</span>
+            <span class="m-menu-item">Acerca de</span>
+            <span class="m-menu-item">Contacto</span>
+          </div>
+          <div class="m-cta-btn">Cotizar ahora</div>
+        </div>
+        <div class="m-hero">
+          <div class="m-badge-h">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#7EC8FF" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Más de 38 años protegiendo familias
+          </div>
+          <div class="m-h1">Protege lo que<br><span>más importa</span></div>
+          <div class="m-sub">Haz clic en cualquier seguro para cotizar.</div>
+          <div class="m-btns">
+            <div class="m-btn-p">Cotiza ahora</div>
+            <div class="m-btn-o">Conocer seguros</div>
+          </div>
+          <div class="m-cards">
+            <div class="m-card"><div class="m-card-icon ic-blue"></div><div class="m-card-label">Autos</div></div>
+            <div class="m-card"><div class="m-card-icon ic-orange"></div><div class="m-card-label">GMM</div></div>
+            <div class="m-card"><div class="m-card-icon ic-teal"></div><div class="m-card-label">Vida</div></div>
+            <div class="m-card"><div class="m-card-icon ic-blue"></div><div class="m-card-label">Hogar</div></div>
+            <div class="m-card"><div class="m-card-icon ic-orange"></div><div class="m-card-label">Empresas</div></div>
+          </div>
+        </div>
+        <div class="m-stats">
+          <div class="m-stat"><div class="m-stat-n">38+</div><div class="m-stat-l">Años</div></div>
+          <div class="m-stat"><div class="m-stat-n">6</div><div class="m-stat-l">Aseguradoras</div></div>
+          <div class="m-stat"><div class="m-stat-n">9</div><div class="m-stat-l">Tipos de seguro</div></div>
+        </div>
+        <div class="m-why">
+          <div class="m-why-card">
+            <div class="m-why-icon"></div>
+            <div class="m-why-title">38+ años de experiencia</div>
+            <div class="m-why-text">Asesorando familias y empresas.</div>
+          </div>
+          <div class="m-why-card">
+            <div class="m-why-icon" style="background:#FF6B2B;"></div>
+            <div class="m-why-title">Atención personalizada</div>
+            <div class="m-why-text">Un asesor desde cotización hasta siniestro.</div>
+          </div>
+          <div class="m-why-card">
+            <div class="m-why-icon" style="background:#1E8FFF;"></div>
+            <div class="m-why-title">Las mejores aseguradoras</div>
+            <div class="m-why-text">Chubb, AXA, Quálitas y más.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone overlay -->
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="p-nav">
+            <div class="p-logo">AISER</div>
+            <div class="p-ham">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="p-hero">
+            <div class="p-h1">Protege lo que<br><span>más importa</span></div>
+            <div class="p-btn">Cotiza ahora</div>
+            <div class="p-cards">
+              <div class="p-card"><div class="p-card-box" style="background:rgba(30,143,255,0.25);"></div><div class="p-card-lbl">Autos</div></div>
+              <div class="p-card"><div class="p-card-box" style="background:rgba(255,107,43,0.25);"></div><div class="p-card-lbl">GMM</div></div>
+              <div class="p-card"><div class="p-card-box" style="background:rgba(0,200,150,0.2);"></div><div class="p-card-lbl">Vida</div></div>
+            </div>
+          </div>
+          <div class="p-body">
+            <div class="p-section-title">¿Por qué AISER?</div>
+            <div class="p-item"><div class="p-item-icon"></div><div class="p-item-text">38+ años de experiencia</div></div>
+            <div class="p-item"><div class="p-item-icon" style="background:#E8F4FF;"></div><div class="p-item-text">Las mejores aseguradoras</div></div>
+            <div class="p-item"><div class="p-item-icon" style="background:#FFF3EE;"></div><div class="p-item-text">Cotización en minutos</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project info -->
+  <div class="proj-info">
+    <div class="proj-name">AISER Seguros</div>
+    <div class="proj-sub">Sitio web institucional · 6 páginas · Cotización en línea</div>
+    <div class="color-pills">
+      <div class="cpill"><div class="cs" style="background:#0F2B5B;"></div>Navy</div>
+      <div class="cpill"><div class="cs" style="background:#1E8FFF;"></div>Blue</div>
+      <div class="cpill"><div class="cs" style="background:#FF6B2B;"></div>Orange</div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="botbar">
+    <div class="rmkt">
+      <div class="rmkt-row"><div class="rmkt-dot"></div><span class="rmkt-word" style="font-size:14px;letter-spacing:2.5px">RMKT</span></div>
+      <div class="rmkt-sub">ramosmkt.lat</div>
+    </div>
+    <div class="bot-handle">@ramos_mkt.rex</div>
+  </div>
+</div>
+</div>
+
+<button class="dl-btn" id="dlBtn" onclick="dl()">Descargar PNG</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+  (function scale() {
+    const s = document.getElementById('scaler');
+    const v = Math.min(window.innerWidth - 48, 680) / 1080;
+    s.style.transform = `scale(${v})`;
+    s.style.marginBottom = `${(1350 * v) - 1350 + 16}px`;
+  })();
+
+  async function dl() {
+    const btn = document.getElementById('dlBtn');
+    btn.textContent = 'Generando…'; btn.disabled = true;
+    await document.fonts.ready;
+    const c = await html2canvas(document.getElementById('a2'), {
+      scale: 1, useCORS: true, allowTaint: true,
+      backgroundColor: '#0A0A0A', logging: false
+    });
+    const a = document.createElement('a');
+    a.download = 'rmkt-aiser-02-showcase.png';
+    a.href = c.toDataURL('image/png', 1.0);
+    a.click();
+    btn.textContent = 'Descargar PNG'; btn.disabled = false;
+  }
+</script>
+</body>
+</html>

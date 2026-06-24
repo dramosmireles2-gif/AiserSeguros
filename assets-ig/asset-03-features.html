@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RMKT — Asset 03 · Features</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #111;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 32px 20px 48px; min-height: 100vh; font-family: 'Inter', sans-serif;
+  }
+  .page-label { color: rgba(255,255,255,0.3); font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+  .scaler { transform-origin: top center; }
+  .dl-btn {
+    margin-top: 28px; background: #00FF88; color: #0A0A0A; border: none;
+    padding: 14px 40px; border-radius: 8px; font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+  }
+  .dl-btn:hover { background: #00e67a; }
+  .dl-btn:disabled { opacity: .6; cursor: default; }
+
+  /* ═══════════════════════════════════════════════════════
+     ASSET  1080 × 1350
+  ═══════════════════════════════════════════════════════ */
+  #a3 {
+    width: 1080px; height: 1350px;
+    background: #0A0A0A;
+    position: relative; overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  /* Background */
+  .dot-grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 30px 30px; }
+  .glow-r { position: absolute; width: 560px; height: 560px; top: 200px; right: -140px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 65%); filter: blur(50px); }
+  .glow-b { position: absolute; width: 400px; height: 400px; bottom: 0; left: -80px; border-radius: 50%; background: radial-gradient(circle, rgba(30,143,255,0.07) 0%, transparent 70%); filter: blur(60px); }
+
+  /* Corner brackets */
+  .cb { position: absolute; width: 38px; height: 38px; border-color: rgba(0,255,136,0.2); border-style: solid; }
+  .cb-tl { top: 48px; left: 48px; border-width: 2px 0 0 2px; }
+  .cb-br { bottom: 48px; right: 48px; border-width: 0 2px 2px 0; }
+
+  /* Top bar */
+  .topbar { position: absolute; top: 48px; left: 80px; right: 80px; display: flex; align-items: center; justify-content: space-between; }
+  .rmkt { display: flex; flex-direction: column; }
+  .rmkt-row { display: flex; align-items: center; gap: 7px; }
+  .rmkt-dot { width: 8px; height: 8px; border-radius: 50%; background: #00FF88; flex-shrink: 0; }
+  .rmkt-word { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 17px; color: #fff; letter-spacing: 3.5px; }
+  .rmkt-sub { font-family: 'Inter', sans-serif; font-size: 8.5px; color: rgba(255,255,255,0.32); letter-spacing: 5px; margin-top: 4px; text-transform: uppercase; }
+  .slide-n { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.28); letter-spacing: 2px; }
+
+  /* Section headline */
+  .section-head { position: absolute; top: 160px; left: 80px; right: 80px; }
+  .eyebrow-sm { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.35); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+  .hl-main { font-weight: 900; font-size: 72px; line-height: 1.0; }
+  .hl-w { color: #fff; display: block; }
+  .hl-g { color: #00FF88; display: block; text-shadow: 0 0 50px rgba(0,255,136,0.35), 0 0 100px rgba(0,255,136,0.12); }
+
+  /* Feature grid */
+  .feat-grid {
+    position: absolute;
+    top: 402px; left: 80px; right: 80px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+  }
+  .feat-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px;
+    padding: 28px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .feat-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,136,0.04) 0%, transparent 60%);
+    border-radius: inherit;
+  }
+  .feat-icon-wrap {
+    width: 50px; height: 50px;
+    background: rgba(0,255,136,0.09);
+    border: 1px solid rgba(0,255,136,0.18);
+    border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+  }
+  .feat-icon-wrap svg { color: #00FF88; }
+  .feat-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; color: #fff; margin-bottom: 8px; line-height: 1.2; }
+  .feat-sub { font-family: 'Inter', sans-serif; font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.42); }
+
+  /* Bottom bar */
+  .botbar { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 80px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.055); }
+  .bot-handle { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.38); }
+</style>
+</head>
+<body>
+<p class="page-label">RMKT · asset-03-features · Post 1080×1350px</p>
+
+<div class="scaler" id="scaler">
+<div id="a3">
+  <div class="dot-grid"></div>
+  <div class="glow-r"></div>
+  <div class="glow-b"></div>
+  <div class="cb cb-tl"></div>
+  <div class="cb cb-br"></div>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="rmkt">
+      <div class="rmkt-row"><div class="rmkt-dot"></div><span class="rmkt-word">RMKT</span></div>
+      <div class="rmkt-sub">Ramos · Digital</div>
+    </div>
+    <div class="slide-n">03 / 04</div>
+  </div>
+
+  <!-- Section headline -->
+  <div class="section-head">
+    <div class="eyebrow-sm">AISER Seguros · Lo que construimos</div>
+    <div class="hl-main">
+      <span class="hl-w">6 funciones</span>
+      <span class="hl-g">que marcan</span>
+      <span class="hl-g">la diferencia</span>
+    </div>
+  </div>
+
+  <!-- Feature grid -->
+  <div class="feat-grid">
+
+    <!-- 1 EmailJS -->
+    <div class="feat-card">
+      <div class="feat-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div class="feat-title">Cotizaciones por correo</div>
+      <div class="feat-sub">Formularios inteligentes con EmailJS. Cada lead llega directo a la bandeja del cliente.</div>
+    </div>
+
+    <!-- 2 Mobile-first -->
+    <div class="feat-card">
+      <div class="feat-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+          <line x1="12" y1="18" x2="12.01" y2="18"/>
+        </svg>
+      </div>
+      <div class="feat-title">Diseño 100% responsive</div>
+      <div class="feat-sub">Experiencia perfecta en celular, tablet y desktop. Mobile-first desde el primer pixel.</div>
+    </div>
+
+    <!-- 3 WhatsApp -->
+    <div class="feat-card">
+      <div class="feat-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </div>
+      <div class="feat-title">WhatsApp integrado</div>
+      <div class="feat-sub">Contacto directo en un clic desde cualquier página. Conversión inmediata.</div>
+    </div>
+
+    <!-- 4 Carousel -->
+    <div class="feat-card">
+      <div class="feat-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="10" rx="2"/>
+          <polyline points="17,2 17,7 7,7 7,2"/>
+          <polyline points="7,17 7,22 17,22 17,17"/>
+        </svg>
+      </div>
+      <div class="feat-title">Vitrina de seguros</div>
+      <div class="feat-sub">Carrusel interactivo con 9 tipos de seguro. Toque o clic directo a cotizar.</div>
+    </div>
+
+    <!-- 5 Animaciones -->
+    <div class="feat-card">
+      <div class="feat-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </div>
+      <div class="feat-title">Experiencia premium</div>
+      <div class="feat-sub">Motion.js para animaciones fluidas al scroll. Sin sacrificar velocidad de carga.</div>
+    </div>
+
+    <!-- 6 Sin frameworks -->
+    <div class="feat-card">
+      <div class="feat-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>
+      </div>
+      <div class="feat-title">Código limpio y veloz</div>
+      <div class="feat-sub">HTML + CSS + JS puro. Sin frameworks innecesarios. Carga instantánea.</div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="botbar">
+    <div class="rmkt">
+      <div class="rmkt-row"><div class="rmkt-dot"></div><span class="rmkt-word" style="font-size:14px;letter-spacing:2.5px">RMKT</span></div>
+      <div class="rmkt-sub">ramosmkt.lat</div>
+    </div>
+    <div class="bot-handle">@ramos_mkt.rex</div>
+  </div>
+</div>
+</div>
+
+<button class="dl-btn" id="dlBtn" onclick="dl()">Descargar PNG</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+  (function scale() {
+    const s = document.getElementById('scaler');
+    const v = Math.min(window.innerWidth - 48, 680) / 1080;
+    s.style.transform = `scale(${v})`;
+    s.style.marginBottom = `${(1350 * v) - 1350 + 16}px`;
+  })();
+
+  async function dl() {
+    const btn = document.getElementById('dlBtn');
+    btn.textContent = 'Generando…'; btn.disabled = true;
+    await document.fonts.ready;
+    const c = await html2canvas(document.getElementById('a3'), {
+      scale: 1, useCORS: true, allowTaint: true,
+      backgroundColor: '#0A0A0A', logging: false
+    });
+    const a = document.createElement('a');
+    a.download = 'rmkt-aiser-03-features.png';
+    a.href = c.toDataURL('image/png', 1.0);
+    a.click();
+    btn.textContent = 'Descargar PNG'; btn.disabled = false;
+  }
+</script>
+</body>
+</html>
