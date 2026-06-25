@@ -8,456 +8,283 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ───────────────────────── RESET ───────────────────────── */
+/* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f0f0f; color: #fff; font-family: 'Inter', sans-serif; min-height: 100vh; padding-bottom: 100px; }
 
-body {
-  background: #0f0f0f;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  min-height: 100vh;
-  padding-bottom: 100px;
-}
-
-/* ───────────────────────── PAGE HEADER ───────────────────────── */
-.pg-header {
-  display: flex; align-items: center; gap: 18px;
-  padding: 22px 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  margin-bottom: 52px;
-}
+/* ── PAGE CHROME ── */
+.pg-header { display: flex; align-items: center; gap: 18px; padding: 22px 40px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 52px; }
 .pg-logo { height: 30px; object-fit: contain; }
 .pg-sep { width: 1px; height: 26px; background: rgba(255,255,255,0.1); }
 .pg-title { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 2.5px; text-transform: uppercase; }
-.pg-badge {
-  margin-left: auto; padding: 5px 14px; border-radius: 100px;
-  background: rgba(0,255,136,0.07); border: 1px solid rgba(0,255,136,0.2);
-  font-size: 10px; font-weight: 700; color: #00FF88; letter-spacing: 2px; text-transform: uppercase;
-}
+.pg-badge { margin-left: auto; padding: 5px 14px; border-radius: 100px; background: rgba(0,255,136,0.07); border: 1px solid rgba(0,255,136,0.2); font-size: 10px; font-weight: 700; color: #00FF88; letter-spacing: 2px; text-transform: uppercase; }
 
-/* ───────────────────────── SECTION LABELS ───────────────────────── */
-.sec-label {
-  display: flex; align-items: center; gap: 18px;
-  padding: 0 40px; margin-bottom: 28px;
-}
-.sec-label h2 {
-  font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
-  color: #00FF88; white-space: nowrap;
-}
+.sec-label { display: flex; align-items: center; gap: 18px; padding: 0 40px; margin-bottom: 28px; }
+.sec-label h2 { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #00FF88; white-space: nowrap; }
 .sec-line { flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
 
-/* ───────────────────────── ASSET CARDS ───────────────────────── */
-.asset-card {
-  margin: 0 40px 52px;
-  background: #141414;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 20px;
-  overflow: hidden;
-}
-.asset-preview {
-  display: flex; justify-content: center;
-  padding: 36px 36px 0;
-  overflow: hidden;
-}
-.asset-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 28px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  margin-top: 24px;
-}
+.asset-card { margin: 0 40px 52px; background: #141414; border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; overflow: hidden; }
+.asset-preview { display: flex; justify-content: center; padding: 36px 36px 0; overflow: hidden; }
+.asset-footer { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 24px; }
 .asset-meta { display: flex; flex-direction: column; gap: 3px; }
 .asset-meta-name { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.65); }
 .asset-meta-size { font-size: 10px; color: rgba(255,255,255,0.28); letter-spacing: 1px; }
-.dl-btn {
-  background: #00FF88; color: #0A0A0A; border: none;
-  padding: 11px 26px; border-radius: 8px;
-  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
-  cursor: pointer; letter-spacing: 0.3px; transition: background .15s;
-}
+.dl-btn { background: #00FF88; color: #0A0A0A; border: none; padding: 11px 26px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; letter-spacing: 0.3px; transition: background .15s; }
 .dl-btn:hover { background: #00e67a; }
 .dl-btn:disabled { opacity: .5; cursor: default; }
-
 .scaler { transform-origin: top center; display: block; }
-
-/* Download all */
 .dl-all-wrap { display: flex; justify-content: center; padding-top: 16px; }
-.dl-all-btn {
-  background: transparent; color: #00FF88;
-  border: 1px solid rgba(0,255,136,0.3);
-  padding: 14px 52px; border-radius: 10px;
-  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700;
-  cursor: pointer; letter-spacing: 1px; transition: all .15s;
-}
+.dl-all-btn { background: transparent; color: #00FF88; border: 1px solid rgba(0,255,136,0.3); padding: 14px 52px; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: 1px; transition: all .15s; }
 .dl-all-btn:hover { background: rgba(0,255,136,0.05); border-color: rgba(0,255,136,0.5); }
 .dl-all-btn:disabled { opacity: .5; cursor: default; }
 
-/* ═══════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════
    SHARED ASSET COMPONENTS
-═══════════════════════════════════════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 /* Dot grid */
-.dg {
-  position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 30px 30px; pointer-events: none;
-}
+.dg { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 30px 30px; pointer-events: none; }
 
-/* Corner brackets */
-.cb { position: absolute; border-color: rgba(0,255,136,0.22); border-style: solid; width: 42px; height: 42px; }
-.cb-tl { top: 50px; left: 50px; border-width: 2px 0 0 2px; }
-.cb-tr { top: 50px; right: 50px; border-width: 2px 2px 0 0; }
-.cb-br { bottom: 50px; right: 50px; border-width: 0 2px 2px 0; }
-.cb-bl { bottom: 50px; left: 50px; border-width: 0 0 2px 2px; }
-
-/* Top bar pattern */
-.topbar {
-  position: absolute; top: 52px; left: 68px; right: 68px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.rmkt-logo img { height: 26px; object-fit: contain; }
-.slide-num { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.28); letter-spacing: 2px; }
-
-/* Text helpers */
-.hl-w { color: #fff; display: block; }
-.hl-g { color: #00FF88; display: block; text-shadow: 0 0 50px rgba(0,255,136,0.4), 0 0 100px rgba(0,255,136,0.12); }
-
-/* Eyebrows */
-.eyebrow {
-  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
-  color: rgba(255,255,255,0.32); letter-spacing: 4px; text-transform: uppercase;
-}
-.eyebrow-g {
-  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
-  color: #00FF88; letter-spacing: 4px; text-transform: uppercase;
-}
-
-/* Pill badges */
-.pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.pill {
-  padding: 8px 18px; border-radius: 100px;
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
-  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
-  color: rgba(255,255,255,0.45); letter-spacing: 1.5px; text-transform: uppercase;
-}
-.pill-g {
-  background: rgba(0,255,136,0.07); border: 1px solid rgba(0,255,136,0.18);
-  color: rgba(0,255,136,0.85);
-}
-
-/* H-separator */
-.h-sep { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,255,136,0.3), transparent); }
+/* Gradient blobs */
+.ga, .gb { position: absolute; border-radius: 50%; pointer-events: none; }
 
 /* Browser frame */
-.browser {
-  border-radius: 12px; overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05);
-  background: #1a1a1a;
-}
-.browser-chrome {
-  height: 42px; background: #232323;
-  display: flex; align-items: center; gap: 8px; padding: 0 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.08); flex-shrink: 0;
-}
+.browser { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 24px 64px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04); background: #1a1a1a; }
+.browser-chrome { height: 42px; background: #232323; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-bottom: 1px solid rgba(255,255,255,0.08); flex-shrink: 0; }
 .tl { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
 .tl-r { background: #ff5f57; } .tl-y { background: #febc2e; } .tl-g { background: #28c840; }
-.browser-url {
-  flex: 1; height: 22px; background: #1a1a1a; border-radius: 5px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(255,255,255,0.32); margin: 0 8px;
-}
+.browser-url { flex: 1; height: 22px; background: #1a1a1a; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(255,255,255,0.3); margin: 0 8px; }
 .browser-body { overflow: hidden; line-height: 0; }
 .browser-body img { width: 100%; display: block; }
 
-/* Phone frame */
-.phone {
-  border-radius: 32px;
-  border: 6px solid rgba(255,255,255,0.12);
-  background: #111; overflow: hidden; position: relative;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.05);
+/* Text helpers */
+.hl-w { color: #fff; display: block; }
+.hl-g { color: #00FF88; display: block; text-shadow: 0 0 60px rgba(0,255,136,0.35), 0 0 120px rgba(0,255,136,0.1); }
+
+/* ── ASSET TOPBAR ── */
+.a-topbar {
+  position: absolute; top: 0; left: 0; right: 0; height: 88px;
+  display: flex; align-items: center; padding: 0 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.055);
 }
-.phone-notch {
-  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 64px; height: 22px;
-  background: rgba(0,0,0,0.95);
-  border-radius: 0 0 14px 14px; z-index: 10;
-}
-.phone-screen img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;
+.a-logo { height: 44px; object-fit: contain; flex-shrink: 0; }
+.a-agency {
+  margin-left: auto;
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+  color: rgba(255,255,255,0.2); letter-spacing: 2px; text-transform: uppercase;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   ASSET 1 — HOOK  1080×1080
-═══════════════════════════════════════════════════════════════ */
-#a1 {
-  width: 1080px; height: 1080px;
-  background: #0A0A0A;
-  position: relative; overflow: hidden;
-  font-family: 'Manrope', sans-serif;
+/* ── TAG ROW ── */
+.a-tags {
+  position: absolute; top: 104px; left: 60px;
+  display: flex; align-items: center; gap: 8px;
 }
-#a1 .ga { position: absolute; top: -260px; left: -220px; width: 760px; height: 760px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 65%); filter: blur(60px); }
-#a1 .gb { position: absolute; bottom: -160px; right: -200px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(30,143,255,0.07) 0%, transparent 65%); filter: blur(50px); }
-
-#a1 .text-area {
-  position: absolute; top: 142px; left: 68px; right: 68px;
-}
-#a1 .hl {
-  font-weight: 900; font-size: 88px; line-height: 1.0;
-  margin-top: 16px; margin-bottom: 24px;
-}
-#a1 .sub {
-  font-family: 'Inter', sans-serif; font-size: 17px; color: rgba(255,255,255,0.38);
-  line-height: 1.55; margin-bottom: 28px;
-}
-#a1 .h-sep { margin-bottom: 24px; }
-
-#a1 .mockup-wrap {
-  position: absolute; left: 52px; right: 52px; top: 618px; bottom: 0;
-  overflow: hidden;
-}
-#a1 .mockup-wrap .browser-body img { height: 520px; object-fit: cover; object-position: top; }
-#a1 .mockup-fade {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 150px;
-  background: linear-gradient(to bottom, transparent, #0A0A0A);
-  z-index: 5;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ASSET 2 — SHOWCASE  1080×1080
-═══════════════════════════════════════════════════════════════ */
-#a2 {
-  width: 1080px; height: 1080px;
-  background: #0A0A0A;
-  position: relative; overflow: hidden;
-  font-family: 'Manrope', sans-serif;
-}
-#a2 .ga { position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 840px; height: 840px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 60%); filter: blur(80px); }
-
-#a2 .topbar-2 {
-  position: absolute; top: 42px; left: 60px; right: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-#a2 .topbar-2 .rmkt-logo img { height: 26px; }
-#a2 .client-badge {
-  padding: 5px 14px; border-radius: 100px;
-  background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.2);
+.a-tag {
+  padding: 6px 14px; border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03);
   font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
-  color: #00FF88; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); letter-spacing: 2px; text-transform: uppercase;
 }
-#a2 .slide-num-2 { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.25); letter-spacing: 2px; }
+.a-tag.g { background: rgba(0,255,136,0.08); border-color: rgba(0,255,136,0.22); color: rgba(0,255,136,0.9); }
 
-#a2 .main-browser {
-  position: absolute; top: 106px; left: 50px; width: 800px;
+/* ── MAIN SPLIT ── */
+.a-main {
+  position: absolute; top: 158px; bottom: 204px;
+  left: 60px; right: 50px;
+  display: flex; gap: 40px;
 }
-#a2 .main-browser .browser-body img { height: 660px; object-fit: cover; object-position: top; }
+.a-left { width: 440px; flex-shrink: 0; display: flex; flex-direction: column; }
+.a-right { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
 
-#a2 .phone-overlay {
-  position: absolute; top: 460px; right: 22px; width: 190px; height: 392px;
+/* ── EYEBROW WITH ICON ── */
+.a-eyebrow-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.a-eyebrow-icon {
+  width: 30px; height: 30px; border-radius: 7px; flex-shrink: 0;
+  background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.2);
+  display: flex; align-items: center; justify-content: center;
+  color: #00FF88;
 }
-#a2 .phone-overlay .phone { width: 100%; height: 100%; }
-#a2 .phone-overlay .phone-screen { height: 100%; }
-#a2 .phone-overlay .phone-screen img { height: 100%; }
-
-#a2 .bot-strip {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  padding: 0 60px;
-  background: linear-gradient(to bottom, transparent, rgba(10,10,10,0.96) 55%);
-  display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 34px;
-}
-#a2 .color-chips { display: flex; align-items: center; gap: 12px; }
-#a2 .chip { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.12); }
-#a2 .color-label { font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 1.5px; margin-left: 4px; }
-#a2 .bot-right { text-align: right; }
-#a2 .bot-tag { font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
-#a2 .bot-val { font-family: 'Inter', sans-serif; font-size: 15px; color: rgba(255,255,255,0.55); font-weight: 600; }
-
-/* ═══════════════════════════════════════════════════════════════
-   ASSET 3 — FEATURES  1080×1080
-═══════════════════════════════════════════════════════════════ */
-#a3 {
-  width: 1080px; height: 1080px;
-  background: #0A0A0A;
-  position: relative; overflow: hidden;
-  font-family: 'Manrope', sans-serif;
-}
-#a3 .ga { position: absolute; top: -160px; right: -200px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.09) 0%, transparent 65%); filter: blur(55px); }
-#a3 .gb { position: absolute; bottom: -100px; left: -180px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(30,143,255,0.06) 0%, transparent 65%); filter: blur(50px); }
-
-#a3 .sec-head {
-  position: absolute; top: 108px; left: 68px; right: 68px;
-}
-#a3 .hl {
-  font-weight: 900; font-size: 70px; line-height: 1.0; margin-top: 12px;
+.a-eyebrow-text {
+  font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+  color: rgba(255,255,255,0.35); letter-spacing: 3px; text-transform: uppercase;
 }
 
-#a3 .feat-grid {
-  position: absolute; top: 290px; left: 58px; right: 58px; bottom: 62px;
-  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 16px;
-}
-#a3 .feat-card {
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 18px; padding: 24px 22px; position: relative; overflow: hidden;
-}
-#a3 .feat-card::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(0,255,136,0.04) 0%, transparent 60%);
-  border-radius: inherit;
-}
-#a3 .feat-icon {
-  width: 46px; height: 46px;
-  background: rgba(0,255,136,0.09); border: 1px solid rgba(0,255,136,0.18);
-  border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  margin-bottom: 14px; flex-shrink: 0;
-}
-#a3 .feat-icon svg { color: #00FF88; }
-#a3 .feat-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 16px; color: #fff; margin-bottom: 6px; line-height: 1.2; }
-#a3 .feat-sub { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.38); line-height: 1.5; }
+/* ── HEADLINES ── */
+.a-hl { font-family: 'Manrope', sans-serif; font-weight: 900; line-height: 1.05; margin-bottom: 18px; }
+.a-sub { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.38); line-height: 1.55; margin-bottom: 24px; }
 
-#a3 .botbar {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 18px 68px;
+/* ── FEATURE ROWS ── */
+.a-feats { display: flex; flex-direction: column; gap: 12px; }
+.a-feat { display: flex; align-items: flex-start; gap: 14px; padding: 14px 18px; border-radius: 12px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); }
+.a-feat-icon { width: 36px; height: 36px; flex-shrink: 0; border-radius: 9px; background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.15); display: flex; align-items: center; justify-content: center; color: #00FF88; }
+.a-feat-title { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 14px; color: #fff; margin-bottom: 2px; }
+.a-feat-sub { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.4; }
+
+/* ── CHECK ROWS (Asset 3) ── */
+.a-checks { display: flex; flex-direction: column; gap: 10px; }
+.a-check { display: flex; align-items: center; gap: 14px; padding: 12px 18px; border-radius: 10px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); }
+.a-check-icon { width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.2); display: flex; align-items: center; justify-content: center; color: #00FF88; }
+.a-check-text { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); }
+
+/* ── STAT ROW ── */
+.a-stats { display: flex; gap: 0; margin-top: 4px; }
+.a-stat { flex: 1; padding: 16px 0; border-right: 1px solid rgba(255,255,255,0.07); padding-right: 20px; margin-right: 20px; }
+.a-stat:last-child { border-right: none; }
+.a-stat-num { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 46px; line-height: 1; color: #00FF88; }
+.a-stat-lbl { font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 4px; line-height: 1.3; }
+
+/* ── PROBLEM BOX ── */
+.a-problem-box { padding: 16px 20px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px; }
+.a-problem-box .a-pb-label { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.3); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+.a-problem-box .a-pb-text { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.45; }
+
+/* ── CATEGORY PILLS ── */
+.a-cat-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.a-cat-pill { padding: 7px 14px; border-radius: 6px; border: 1px solid rgba(0,255,136,0.18); background: rgba(0,255,136,0.06); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: rgba(0,255,136,0.8); letter-spacing: 1.5px; text-transform: uppercase; }
+
+/* ── BRAND ROW (Asset 1) ── */
+.a-brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); width: fit-content; }
+.a-client-logo { height: 28px; object-fit: contain; }
+.a-client-name { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; }
+
+/* ── TECH PILLS ── */
+.a-tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.a-tech-pill { padding: 6px 12px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 1.5px; text-transform: uppercase; }
+
+/* ── H-SEPARATOR ── */
+.h-sep { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,255,136,0.25), transparent); margin-bottom: 20px; }
+
+/* ── BOTTOM STRIP — 3 CARDS ── */
+.a-bottom-cards {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 204px;
   border-top: 1px solid rgba(255,255,255,0.055);
-  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 60px;
+  display: flex; align-items: stretch; gap: 0;
 }
-#a3 .bot-rmkt { display: flex; align-items: center; gap: 0; }
-#a3 .bot-rmkt img { height: 20px; object-fit: contain; opacity: 0.6; }
-#a3 .bot-handle { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.3); }
+.a-bc { flex: 1; padding: 28px 26px; border-right: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; justify-content: center; }
+.a-bc:last-child { border-right: none; }
+.a-bc-label { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700; color: #00FF88; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+.a-bc-val { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.6); line-height: 1.45; }
 
-/* ═══════════════════════════════════════════════════════════════
-   ASSET 4 — CTA  1080×1080
-═══════════════════════════════════════════════════════════════ */
-#a4 {
-  width: 1080px; height: 1080px;
-  background: #0A0A0A;
-  position: relative; overflow: hidden;
-  font-family: 'Manrope', sans-serif;
+/* ── BOTTOM STRIP — LABEL + STEPS ── */
+.a-bottom-steps {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 204px;
+  border-top: 1px solid rgba(255,255,255,0.055);
+  padding: 0 60px;
+  display: flex; align-items: center; gap: 0;
 }
-#a4 .ga { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 740px; height: 740px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 60%); filter: blur(70px); }
+.a-bs-intro { flex: 0 0 240px; padding-right: 36px; display: flex; flex-direction: column; justify-content: center; }
+.a-bs-intro-tag { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700; color: #00FF88; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+.a-bs-intro-txt { font-family: 'Manrope', sans-serif; font-size: 16px; font-weight: 800; line-height: 1.25; color: rgba(255,255,255,0.75); }
+.a-bs-div { width: 1px; height: 110px; background: rgba(255,255,255,0.08); margin-right: 36px; }
+.a-bs-steps { display: flex; gap: 0; flex: 1; }
+.a-bs-step { flex: 1; padding-left: 28px; border-left: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; justify-content: center; }
+.a-bs-step:first-child { border-left: none; padding-left: 0; }
+.a-bs-num { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; color: #00FF88; letter-spacing: 2px; margin-bottom: 6px; }
+.a-bs-title { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.a-bs-sub { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.35; }
 
-#a4 .center {
-  position: absolute; inset: 0;
+/* ── FOOTER LINE ── */
+.a-footer-line {
+  position: absolute; bottom: 12px; right: 60px;
+  font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600;
+  color: rgba(255,255,255,0.15); letter-spacing: 2px; text-transform: uppercase;
+}
+
+
+/* ═══════════════════════════════════════════════
+   ASSET 1 — CASO DE ESTUDIO  1080×1080
+═══════════════════════════════════════════════ */
+#a1 { width: 1080px; height: 1080px; background: #0A0A0A; position: relative; overflow: hidden; font-family: 'Manrope', sans-serif; }
+#a1 .ga { width: 700px; height: 700px; top: -200px; left: -180px; background: radial-gradient(circle, rgba(0,255,136,0.09) 0%, transparent 65%); filter: blur(70px); }
+#a1 .gb { width: 500px; height: 500px; bottom: 100px; right: -150px; background: radial-gradient(circle, rgba(30,143,255,0.07) 0%, transparent 65%); filter: blur(55px); }
+#a1 .a-hl { font-size: 54px; }
+#a1 .a-sub { font-size: 17px; }
+#a1 .a-right .browser-body img { height: 400px; object-fit: cover; object-position: top; }
+
+/* ═══════════════════════════════════════════════
+   ASSET 2 — EL PROBLEMA  1080×1080
+═══════════════════════════════════════════════ */
+#a2 { width: 1080px; height: 1080px; background: #0A0A0A; position: relative; overflow: hidden; font-family: 'Manrope', sans-serif; }
+#a2 .ga { width: 600px; height: 600px; top: -150px; right: -100px; background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 65%); filter: blur(60px); }
+#a2 .gb { width: 480px; height: 480px; bottom: 100px; left: -120px; background: radial-gradient(circle, rgba(30,143,255,0.07) 0%, transparent 65%); filter: blur(50px); }
+#a2 .a-hl { font-size: 68px; }
+#a2 .a-sub { font-size: 16px; }
+#a2 .a-right .browser-body img { height: 390px; object-fit: cover; object-position: top; }
+
+/* ═══════════════════════════════════════════════
+   ASSET 3 — RESULTADOS  1080×1080
+═══════════════════════════════════════════════ */
+#a3 { width: 1080px; height: 1080px; background: #0A0A0A; position: relative; overflow: hidden; font-family: 'Manrope', sans-serif; }
+#a3 .ga { width: 650px; height: 650px; top: -160px; left: 50%; transform: translateX(-50%); background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 60%); filter: blur(70px); }
+#a3 .a-hl { font-size: 62px; }
+#a3 .a-sub { font-size: 16px; }
+#a3 .a-right .browser-body img { height: 380px; object-fit: cover; object-position: top; }
+
+/* ═══════════════════════════════════════════════
+   ASSET 4 — CATÁLOGO UX  1080×1080  (browser left)
+═══════════════════════════════════════════════ */
+#a4 { width: 1080px; height: 1080px; background: #0A0A0A; position: relative; overflow: hidden; font-family: 'Manrope', sans-serif; }
+#a4 .ga { width: 580px; height: 580px; top: -120px; right: -100px; background: radial-gradient(circle, rgba(0,255,136,0.09) 0%, transparent 65%); filter: blur(60px); }
+#a4 .a-main { flex-direction: row-reverse; }
+#a4 .a-hl { font-size: 74px; }
+#a4 .a-sub { font-size: 16px; }
+#a4 .a-right .browser-body img { height: 390px; object-fit: cover; object-position: top; }
+
+/* ═══════════════════════════════════════════════
+   STORY — LEAD FLOW  1080×1920
+═══════════════════════════════════════════════ */
+#s1 { width: 1080px; height: 1920px; background: #0A0A0A; position: relative; overflow: hidden; font-family: 'Manrope', sans-serif; }
+#s1 .ga { width: 700px; height: 700px; top: -150px; left: 50%; transform: translateX(-50%); background: radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 60%); filter: blur(70px); }
+#s1 .gb { width: 600px; height: 600px; bottom: 250px; right: -200px; background: radial-gradient(circle, rgba(30,143,255,0.07) 0%, transparent 65%); filter: blur(60px); }
+
+/* Story topbar */
+#s1 .a-topbar { border-bottom: 1px solid rgba(255,255,255,0.055); }
+
+/* Story headline section */
+#s1 .s-hero {
+  position: absolute; top: 130px; left: 0; right: 0; height: 500px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 0 88px;
+  padding: 0 80px; text-align: center;
 }
-#a4 .rmkt-big { display: flex; flex-direction: column; align-items: center; margin-bottom: 36px; }
-#a4 .rmkt-big img { height: 50px; object-fit: contain; }
-#a4 .rmkt-big-sub {
-  font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.25);
-  letter-spacing: 5px; text-transform: uppercase; margin-top: 8px;
-}
-#a4 .h-sep { width: 100%; margin-bottom: 36px; }
-#a4 .cta-hl { font-weight: 900; font-size: 76px; line-height: 1.0; text-align: center; margin-bottom: 14px; }
-#a4 .cta-sub {
-  font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,0.38);
-  text-align: center; margin-bottom: 40px; line-height: 1.5;
-}
-#a4 .cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; }
-#a4 .ccard {
-  display: flex; align-items: center; gap: 14px;
-  padding: 18px 20px; border-radius: 16px;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(0,255,136,0.1);
-}
-#a4 .ccard-icon {
-  width: 42px; height: 42px; flex-shrink: 0;
-  background: rgba(0,255,136,0.09); border: 1px solid rgba(0,255,136,0.18);
-  border-radius: 11px; display: flex; align-items: center; justify-content: center;
-}
-#a4 .ccard-icon svg { color: #00FF88; }
-#a4 .ccard-label { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.28); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
-#a4 .ccard-val { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 15px; color: #fff; }
-
-/* ═══════════════════════════════════════════════════════════════
-   STORY — REVEAL  1080×1920
-═══════════════════════════════════════════════════════════════ */
-#s1 {
-  width: 1080px; height: 1920px;
-  background: #0A0A0A;
-  position: relative; overflow: hidden;
-  font-family: 'Manrope', sans-serif;
-}
-#s1 .ga { position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 60%); filter: blur(70px); }
-#s1 .gb { position: absolute; bottom: 200px; right: -250px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, rgba(30,143,255,0.07) 0%, transparent 65%); filter: blur(60px); }
-
-/* Top section */
-#s1 .s-top {
-  position: absolute; top: 0; left: 0; right: 0; height: 560px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 0 88px; text-align: center;
-}
-#s1 .s-top img.s-logo { height: 38px; object-fit: contain; margin-bottom: 26px; }
 #s1 .s-badge {
-  padding: 7px 20px; border-radius: 100px;
+  display: inline-flex; align-self: center;
+  padding: 8px 20px; border-radius: 100px;
   background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.22);
   font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
   color: #00FF88; letter-spacing: 3px; text-transform: uppercase;
   margin-bottom: 28px;
 }
-#s1 .s-eyebrow {
-  font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.32);
-  letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px;
-}
-#s1 .s-hl { font-weight: 900; font-size: 96px; line-height: 1.0; }
-#s1 .s-sub {
-  font-family: 'Inter', sans-serif; font-size: 17px; color: rgba(255,255,255,0.38);
-  margin-top: 20px; line-height: 1.55;
-}
+#s1 .s-eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.32); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+#s1 .s-hl { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 96px; line-height: 1.0; text-align: center; }
+#s1 .s-hl .hl-g { text-shadow: 0 0 60px rgba(0,255,136,0.35); }
+#s1 .s-sub { font-family: 'Inter', sans-serif; font-size: 18px; color: rgba(255,255,255,0.38); margin-top: 20px; line-height: 1.55; }
 
-/* Mid divider */
-#s1 .s-div {
-  position: absolute; top: 560px; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,255,136,0.25), transparent);
-}
+/* Story divider */
+#s1 .s-div { position: absolute; top: 640px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,255,136,0.2), transparent); }
 
-/* Mid section */
-#s1 .s-mid {
-  position: absolute; top: 580px; left: 0; right: 0; height: 900px;
-  padding: 0 48px;
-}
-#s1 .s-browser {
-  position: absolute; top: 30px; left: 48px; width: 700px;
-}
-#s1 .s-browser .browser-body img { height: 600px; object-fit: cover; object-position: top; }
+/* Story mockup */
+#s1 .s-mockup { position: absolute; top: 660px; left: 50px; right: 50px; }
+#s1 .s-mockup .browser-body img { height: 640px; object-fit: cover; object-position: top; }
 
-#s1 .s-phone {
-  position: absolute; top: 240px; right: 48px; width: 200px; height: 420px;
-}
-#s1 .s-phone .phone { width: 100%; height: 100%; }
-#s1 .s-phone .phone-screen { height: 100%; }
-#s1 .s-phone .phone-screen img { height: 100%; }
+/* Story divider 2 */
+#s1 .s-div2 { position: absolute; top: 1430px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent); }
 
-/* Bottom divider */
-#s1 .s-div2 {
-  position: absolute; top: 1480px; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
-}
-
-/* Bot section */
+/* Story bottom */
 #s1 .s-bot {
-  position: absolute; top: 1500px; left: 0; right: 0; bottom: 0;
+  position: absolute; top: 1452px; left: 0; right: 0; bottom: 0;
   padding: 40px 72px;
-  display: flex; flex-direction: column; gap: 22px;
+  display: flex; flex-direction: column; gap: 24px;
 }
 #s1 .s-feat-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-#s1 .s-fp {
-  padding: 8px 16px; border-radius: 100px;
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
-  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
-  color: rgba(255,255,255,0.45); letter-spacing: 1.5px; text-transform: uppercase;
-}
-#s1 .s-cta-card {
-  background: rgba(0,255,136,0.06); border: 1px solid rgba(0,255,136,0.15);
-  border-radius: 20px; padding: 26px 30px;
-}
-#s1 .s-cta-hl { font-weight: 900; font-size: 34px; color: #fff; margin-bottom: 6px; }
-#s1 .s-cta-sub { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.38); }
-#s1 .s-handle {
-  margin-top: auto; align-self: flex-end;
-  font-family: 'Inter', sans-serif; font-size: 15px; color: rgba(255,255,255,0.3);
-}
+#s1 .s-fp { padding: 8px 16px; border-radius: 100px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 1.5px; text-transform: uppercase; }
+#s1 .s-cta-card { background: rgba(0,255,136,0.06); border: 1px solid rgba(0,255,136,0.15); border-radius: 20px; padding: 28px 32px; }
+#s1 .s-cta-hl { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 36px; color: #fff; margin-bottom: 8px; line-height: 1.1; }
+#s1 .s-cta-sub { font-family: 'Inter', sans-serif; font-size: 15px; color: rgba(255,255,255,0.38); }
+#s1 .s-handle { align-self: flex-end; font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.25); margin-top: auto; }
 
-/* Centered headline text in assets where spans are display:block */
-#s1 .s-hl { text-align: center; }
-#a4 .cta-hl .hl-w, #a4 .cta-hl .hl-g { text-align: center; }
+/* Story footer line overrides */
+#s1 .a-footer-line { bottom: 20px; }
 </style>
 </head>
 <body>
@@ -470,401 +297,489 @@ body {
   <div class="pg-badge">5 assets</div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     CARRUSEL · 1080 × 1080 px
-══════════════════════════════════════════ -->
+<!-- ══════════════════ CARRUSEL 1080×1080 ══════════════════ -->
 <div class="sec-label">
   <h2>Carrusel · 1080 × 1080 px</h2>
   <div class="sec-line"></div>
 </div>
 
-<!-- ── ASSET 1 — HOOK ── -->
+<!-- ── ASSET 1 — CASO DE ESTUDIO ── -->
 <div class="asset-card">
   <div class="asset-preview" id="prev1">
     <div class="scaler" id="sc1">
       <div id="a1">
-        <div class="dg"></div>
-        <div class="ga"></div>
-        <div class="gb"></div>
-        <div class="cb cb-tl"></div>
-        <div class="cb cb-tr"></div>
-        <div class="cb cb-bl"></div>
-        <div class="cb cb-br"></div>
+        <div class="dg"></div><div class="ga"></div><div class="gb"></div>
 
-        <!-- Topbar -->
-        <div class="topbar">
-          <div class="rmkt-logo"><img src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous"></div>
-          <span class="slide-num">01 · 04</span>
+        <div class="a-topbar">
+          <img class="a-logo" src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous">
+          <span class="a-agency">Diseño UX/UI + Desarrollo Web / RMKT</span>
         </div>
 
-        <!-- Text area -->
-        <div class="text-area">
-          <span class="eyebrow-g">Caso de estudio · AISER Seguros</span>
-          <div class="hl">
-            <span class="hl-w">38 años</span>
-            <span class="hl-w">en el mercado.</span>
-            <span class="hl-g">Ahora, en digital.</span>
-          </div>
-          <p class="sub">Diseñamos y desarrollamos el sitio web completo<br>desde cero — HTML · CSS · JS · EmailJS.</p>
-          <div class="h-sep" style="margin-bottom:22px;"></div>
-          <div class="pill-row">
-            <div class="pill pill-g">Sitio desde cero</div>
-            <div class="pill pill-g">Cotización online</div>
-            <div class="pill pill-g">Mobile-first</div>
-          </div>
+        <div class="a-tags">
+          <div class="a-tag g">Caso de estudio</div>
+          <div class="a-tag">AISER Seguros</div>
         </div>
 
-        <!-- Browser mockup -->
-        <div class="mockup-wrap">
-          <div class="browser">
-            <div class="browser-chrome">
-              <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
-              <div class="browser-url">aiserseguros.com</div>
+        <div class="a-main">
+          <div class="a-left">
+            <div class="a-eyebrow-wrap">
+              <div class="a-eyebrow-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <span class="a-eyebrow-text">Caso de estudio</span>
             </div>
-            <div class="browser-body">
-              <img src="../Inicio SS.png" crossorigin="anonymous" alt="AISER Seguros website">
+
+            <div class="a-brand-row">
+              <img class="a-client-logo" src="../Logo AISER sin fondo.png" alt="AISER" crossorigin="anonymous">
+              <span class="a-client-name">AISER Seguros</span>
+            </div>
+
+            <div class="a-hl">
+              <span class="hl-w">Cómo transformamos</span>
+              <span class="hl-w">la experiencia digital</span>
+              <span class="hl-w">de una agencia</span>
+              <span class="hl-g">de seguros.</span>
+            </div>
+
+            <p class="a-sub">Claridad que genera confianza y cotizaciones.<br>Sitio completo desde cero — sin templates.</p>
+
+            <div class="a-tech-pills">
+              <div class="a-tech-pill">HTML</div>
+              <div class="a-tech-pill">CSS</div>
+              <div class="a-tech-pill">JavaScript</div>
+              <div class="a-tech-pill">EmailJS</div>
+              <div class="a-tech-pill">Motion.js</div>
             </div>
           </div>
-          <div class="mockup-fade"></div>
+
+          <div class="a-right">
+            <div class="browser">
+              <div class="browser-chrome">
+                <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
+                <div class="browser-url">aiserseguros.com</div>
+              </div>
+              <div class="browser-body">
+                <img src="../Inicio SS.png" alt="AISER Seguros" crossorigin="anonymous">
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="a-bottom-cards">
+          <div class="a-bc">
+            <div class="a-bc-label">Claridad comercial</div>
+            <div class="a-bc-val">Catálogo ordenado<br>y navegable</div>
+          </div>
+          <div class="a-bc">
+            <div class="a-bc-label">Experiencia digital</div>
+            <div class="a-bc-val">Diseño mobile-first<br>desde cero</div>
+          </div>
+          <div class="a-bc">
+            <div class="a-bc-label">Conversión real</div>
+            <div class="a-bc-val">Cotización en un clic,<br>WhatsApp siempre cerca</div>
+          </div>
+        </div>
+        <div class="a-footer-line">AISER Seguros / Experiencia Digital</div>
       </div>
     </div>
   </div>
   <div class="asset-footer">
     <div class="asset-meta">
-      <div class="asset-meta-name">Slide 01 — Hook</div>
+      <div class="asset-meta-name">Slide 01 — Caso de estudio</div>
       <div class="asset-meta-size">1080 × 1080 px</div>
     </div>
-    <button class="dl-btn" onclick="dl('a1','rmkt-aiser-01-hook.png',this)">Descargar PNG</button>
+    <button class="dl-btn" onclick="dl('a1','rmkt-aiser-01-caso.png',this)">Descargar PNG</button>
   </div>
 </div>
 
-<!-- ── ASSET 2 — SHOWCASE ── -->
+<!-- ── ASSET 2 — EL PROBLEMA ── -->
 <div class="asset-card">
   <div class="asset-preview" id="prev2">
     <div class="scaler" id="sc2">
       <div id="a2">
-        <div class="dg"></div>
-        <div class="ga"></div>
-        <div class="cb cb-tl"></div>
-        <div class="cb cb-tr"></div>
-        <div class="cb cb-bl"></div>
-        <div class="cb cb-br"></div>
+        <div class="dg"></div><div class="ga"></div><div class="gb"></div>
 
-        <!-- Topbar -->
-        <div class="topbar-2">
-          <div class="rmkt-logo"><img src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous"></div>
-          <div class="client-badge">AISER Seguros</div>
-          <span class="slide-num-2">02 · 04</span>
+        <div class="a-topbar">
+          <img class="a-logo" src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous">
+          <span class="a-agency">Diseño UX/UI + Desarrollo Web / RMKT</span>
         </div>
 
-        <!-- Browser -->
-        <div class="main-browser browser">
-          <div class="browser-chrome">
-            <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
-            <div class="browser-url">aiserseguros.com</div>
-          </div>
-          <div class="browser-body">
-            <img src="../Inicio SS.png" crossorigin="anonymous" alt="AISER Seguros">
-          </div>
+        <div class="a-tags">
+          <div class="a-tag g">Carrusel / Problema</div>
+          <div class="a-tag">AISER Seguros</div>
         </div>
 
-        <!-- Phone overlay -->
-        <div class="phone-overlay">
-          <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <img src="../ss movil.png" crossorigin="anonymous" alt="AISER móvil">
+        <div class="a-main">
+          <div class="a-left">
+            <div class="a-eyebrow-wrap">
+              <div class="a-eyebrow-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="a-eyebrow-text">Claridad que genera confianza</span>
+            </div>
+
+            <div class="a-hl">
+              <span class="hl-w">Tu seguro no</span>
+              <span class="hl-w">debería</span>
+              <span class="hl-g">confundirte.</span>
+            </div>
+
+            <p class="a-sub">Cuando el usuario no sabe qué hacer,<br>la confianza se pierde.</p>
+
+            <div class="a-problem-box">
+              <div class="a-pb-label">Antes</div>
+              <div class="a-pb-text">Mucha información, poca guía y una cotización escondida en múltiples pasos.</div>
+            </div>
+
+            <div class="a-stats">
+              <div class="a-stat">
+                <div class="a-stat-num">20<span style="font-size:28px;">+</span></div>
+                <div class="a-stat-lbl">seguros por<br>ordenar</div>
+              </div>
+              <div class="a-stat">
+                <div class="a-stat-num">1</div>
+                <div class="a-stat-lbl">ruta clara<br>para empezar</div>
+              </div>
+              <div class="a-stat">
+                <div class="a-stat-num">0</div>
+                <div class="a-stat-lbl">pasos<br>de sobra</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="a-right">
+            <div class="browser">
+              <div class="browser-chrome">
+                <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
+                <div class="browser-url">aiserseguros.com</div>
+              </div>
+              <div class="browser-body">
+                <img src="../Inicio SS.png" alt="AISER Seguros" crossorigin="anonymous">
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Bottom strip -->
-        <div class="bot-strip">
-          <div class="color-chips">
-            <div class="chip" style="background:#0F2B5B;"></div>
-            <div class="chip" style="background:#1E8FFF;"></div>
-            <div class="chip" style="background:#FF6B2B;"></div>
-            <span class="color-label">Paleta AISER</span>
+        <div class="a-bottom-steps">
+          <div class="a-bs-intro">
+            <div class="a-bs-intro-tag">La solución empieza aquí</div>
+            <div class="a-bs-intro-txt">Orden que guía.<br>Confianza que convierte.</div>
           </div>
-          <div class="bot-right">
-            <div class="bot-tag">Diseño responsivo</div>
-            <div class="bot-val">Mobile-first · Desktop</div>
+          <div class="a-bs-div"></div>
+          <div class="a-bs-steps">
+            <div class="a-bs-step">
+              <div class="a-bs-num">01</div>
+              <div class="a-bs-title">Explora fácil</div>
+              <div class="a-bs-sub">Todo en su lugar</div>
+            </div>
+            <div class="a-bs-step">
+              <div class="a-bs-num">02</div>
+              <div class="a-bs-title">Entiende rápido</div>
+              <div class="a-bs-sub">Coberturas claras</div>
+            </div>
+            <div class="a-bs-step">
+              <div class="a-bs-num">03</div>
+              <div class="a-bs-title">Cotiza sin buscar</div>
+              <div class="a-bs-sub">CTA siempre visible</div>
+            </div>
           </div>
         </div>
+        <div class="a-footer-line">Desliza para ver la solución</div>
       </div>
     </div>
   </div>
   <div class="asset-footer">
     <div class="asset-meta">
-      <div class="asset-meta-name">Slide 02 — Showcase</div>
+      <div class="asset-meta-name">Slide 02 — El Problema</div>
       <div class="asset-meta-size">1080 × 1080 px</div>
     </div>
-    <button class="dl-btn" onclick="dl('a2','rmkt-aiser-02-showcase.png',this)">Descargar PNG</button>
+    <button class="dl-btn" onclick="dl('a2','rmkt-aiser-02-problema.png',this)">Descargar PNG</button>
   </div>
 </div>
 
-<!-- ── ASSET 3 — FEATURES ── -->
+<!-- ── ASSET 3 — RESULTADOS ── -->
 <div class="asset-card">
   <div class="asset-preview" id="prev3">
     <div class="scaler" id="sc3">
       <div id="a3">
-        <div class="dg"></div>
-        <div class="ga"></div>
-        <div class="gb"></div>
-        <div class="cb cb-tl"></div>
-        <div class="cb cb-br"></div>
+        <div class="dg"></div><div class="ga"></div>
 
-        <!-- Topbar -->
-        <div class="topbar">
-          <div class="rmkt-logo"><img src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous"></div>
-          <span class="slide-num">03 · 04</span>
+        <div class="a-topbar">
+          <img class="a-logo" src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous">
+          <span class="a-agency">Diseño UX/UI + Desarrollo Web / RMKT</span>
         </div>
 
-        <!-- Headline -->
-        <div class="sec-head">
-          <span class="eyebrow">AISER Seguros · Lo que construimos</span>
-          <div class="hl">
-            <span class="hl-w">6 funciones que</span>
-            <span class="hl-g">marcan la diferencia</span>
-          </div>
+        <div class="a-tags">
+          <div class="a-tag g">Resultados</div>
+          <div class="a-tag">AISER Seguros</div>
         </div>
 
-        <!-- Feature grid -->
-        <div class="feat-grid">
-          <div class="feat-card">
-            <div class="feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-              </svg>
+        <div class="a-main">
+          <div class="a-left">
+            <div class="a-eyebrow-wrap" style="margin-bottom:14px;">
+              <div class="a-eyebrow-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              </div>
+              <span class="a-eyebrow-text">Resultados</span>
             </div>
-            <div class="feat-title">Cotizaciones por correo</div>
-            <div class="feat-sub">EmailJS integrado. Cada lead llega directo a la bandeja del cliente.</div>
+
+            <div class="a-hl">
+              <span class="hl-w">Una experiencia</span>
+              <span class="hl-w">más clara.</span>
+              <span class="hl-g">Un proceso más fácil.</span>
+            </div>
+
+            <p class="a-sub">Una web que ordena la oferta y acelera el contacto con el cliente.</p>
+
+            <div class="a-checks">
+              <div class="a-check">
+                <div class="a-check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="a-check-text">Más de 20 seguros organizados</div>
+              </div>
+              <div class="a-check">
+                <div class="a-check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="a-check-text">Cotización visible en todo momento</div>
+              </div>
+              <div class="a-check">
+                <div class="a-check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="a-check-text">Navegación simplificada</div>
+              </div>
+              <div class="a-check">
+                <div class="a-check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="a-check-text">WhatsApp integrado</div>
+              </div>
+            </div>
           </div>
-          <div class="feat-card">
-            <div class="feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
-              </svg>
+
+          <div class="a-right">
+            <div class="browser">
+              <div class="browser-chrome">
+                <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
+                <div class="browser-url">aiserseguros.com/servicios</div>
+              </div>
+              <div class="browser-body">
+                <img src="../Servicios ss.png" alt="AISER Servicios" crossorigin="anonymous">
+              </div>
             </div>
-            <div class="feat-title">Diseño 100% responsive</div>
-            <div class="feat-sub">Perfecta en móvil, tablet y desktop. Mobile-first desde el primer pixel.</div>
-          </div>
-          <div class="feat-card">
-            <div class="feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-            </div>
-            <div class="feat-title">WhatsApp integrado</div>
-            <div class="feat-sub">Contacto directo en un clic desde cualquier sección. Conversión inmediata.</div>
-          </div>
-          <div class="feat-card">
-            <div class="feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="7" width="20" height="10" rx="2"/><polyline points="17,2 17,7 7,7 7,2"/><polyline points="7,17 7,22 17,22 17,17"/>
-              </svg>
-            </div>
-            <div class="feat-title">Vitrina de seguros</div>
-            <div class="feat-sub">Carrusel con 9 tipos de seguro. Toque o clic directo a cotizar.</div>
-          </div>
-          <div class="feat-card">
-            <div class="feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-              </svg>
-            </div>
-            <div class="feat-title">Experiencia premium</div>
-            <div class="feat-sub">Motion.js para animaciones fluidas al scroll. Sin sacrificar velocidad.</div>
-          </div>
-          <div class="feat-card">
-            <div class="feat-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-              </svg>
-            </div>
-            <div class="feat-title">Código limpio y veloz</div>
-            <div class="feat-sub">HTML + CSS + JS puro. Sin frameworks. Carga instantánea.</div>
           </div>
         </div>
 
-        <!-- Bottom bar -->
-        <div class="botbar">
-          <div class="bot-rmkt"><img src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous"></div>
-          <div class="bot-handle">@ramos_mkt.rex</div>
+        <div class="a-bottom-cards">
+          <div class="a-bc">
+            <div class="a-bc-label">Más claridad</div>
+            <div class="a-bc-val">Catálogo fácil<br>de entender</div>
+          </div>
+          <div class="a-bc">
+            <div class="a-bc-label">Menos fricción</div>
+            <div class="a-bc-val">Menos pasos<br>para cotizar</div>
+          </div>
+          <div class="a-bc">
+            <div class="a-bc-label">Mejor conversión</div>
+            <div class="a-bc-val">Contacto visible<br>en todo momento</div>
+          </div>
         </div>
+        <div class="a-footer-line">Diseño UX/UI + Desarrollo Web / RMKT</div>
       </div>
     </div>
   </div>
   <div class="asset-footer">
     <div class="asset-meta">
-      <div class="asset-meta-name">Slide 03 — Features</div>
+      <div class="asset-meta-name">Slide 03 — Resultados</div>
       <div class="asset-meta-size">1080 × 1080 px</div>
     </div>
-    <button class="dl-btn" onclick="dl('a3','rmkt-aiser-03-features.png',this)">Descargar PNG</button>
+    <button class="dl-btn" onclick="dl('a3','rmkt-aiser-03-resultados.png',this)">Descargar PNG</button>
   </div>
 </div>
 
-<!-- ── ASSET 4 — CTA ── -->
+<!-- ── ASSET 4 — CATÁLOGO UX ── -->
 <div class="asset-card">
   <div class="asset-preview" id="prev4">
     <div class="scaler" id="sc4">
       <div id="a4">
-        <div class="dg"></div>
-        <div class="ga"></div>
-        <div class="cb cb-tl"></div>
-        <div class="cb cb-tr"></div>
-        <div class="cb cb-br"></div>
-        <div class="cb cb-bl"></div>
+        <div class="dg"></div><div class="ga"></div>
 
-        <div class="center">
-          <div class="rmkt-big">
-            <img src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous">
-            <div class="rmkt-big-sub">Ramos · Digital</div>
+        <div class="a-topbar">
+          <img class="a-logo" src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous">
+          <span class="a-agency">Diseño UX/UI + Desarrollo Web / RMKT</span>
+        </div>
+
+        <div class="a-tags">
+          <div class="a-tag g">Catálogo UX</div>
+          <div class="a-tag">Arquitectura de oferta</div>
+        </div>
+
+        <!-- reversed: browser left, text right -->
+        <div class="a-main">
+          <div class="a-right">
+            <div class="browser">
+              <div class="browser-chrome">
+                <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
+                <div class="browser-url">aiserseguros.com/servicios</div>
+              </div>
+              <div class="browser-body">
+                <img src="../Servicios ss.png" alt="AISER Catálogo" crossorigin="anonymous">
+              </div>
+            </div>
           </div>
-          <div class="h-sep"></div>
-          <div class="cta-hl">
-            <span class="hl-w">¿Tu negocio</span>
-            <span class="hl-w">también lo</span>
-            <span class="hl-g">necesita?</span>
-          </div>
-          <p class="cta-sub">Diseñamos y desarrollamos sitios web que<br>generan resultados reales para tu negocio.</p>
-          <div class="cgrid">
-            <!-- WhatsApp -->
-            <div class="ccard">
-              <div class="ccard-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
+
+          <div class="a-left">
+            <div class="a-eyebrow-wrap">
+              <div class="a-eyebrow-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
               </div>
-              <div>
-                <div class="ccard-label">WhatsApp</div>
-                <div class="ccard-val">814 807 8309</div>
-              </div>
+              <span class="a-eyebrow-text">Organización que vende</span>
             </div>
-            <!-- Instagram -->
-            <div class="ccard">
-              <div class="ccard-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                </svg>
-              </div>
-              <div>
-                <div class="ccard-label">Instagram</div>
-                <div class="ccard-val" style="font-size:13px;">@ramos_mkt.rex</div>
-              </div>
+
+            <div class="a-hl">
+              <span class="hl-w">20+ seguros.</span>
+              <span class="hl-g">Fácil de explorar.</span>
             </div>
-            <!-- Web -->
-            <div class="ccard">
-              <div class="ccard-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="ccard-label">Web</div>
-                <div class="ccard-val">ramosmkt.lat</div>
-              </div>
+
+            <p class="a-sub">Un catálogo amplio que se entiende desde el primer vistazo.</p>
+
+            <div class="a-cat-pills">
+              <div class="a-cat-pill">Autos</div>
+              <div class="a-cat-pill">GMM</div>
+              <div class="a-cat-pill">Vida</div>
+              <div class="a-cat-pill">Empresas</div>
+              <div class="a-cat-pill">Turistas</div>
+              <div class="a-cat-pill">Transporte</div>
             </div>
-            <!-- Email -->
-            <div class="ccard">
-              <div class="ccard-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
+
+            <div class="a-feats">
+              <div class="a-feat">
+                <div class="a-feat-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                </div>
+                <div>
+                  <div class="a-feat-title">Catálogo entendible</div>
+                  <div class="a-feat-sub">Todo se entiende desde el primer vistazo</div>
+                </div>
               </div>
-              <div>
-                <div class="ccard-label">Correo</div>
-                <div class="ccard-val" style="font-size:12px;">dramosmirele2@ramosmkt.lat</div>
+              <div class="a-feat">
+                <div class="a-feat-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <div class="a-feat-title">Respaldo visible</div>
+                  <div class="a-feat-sub">38+ años de trayectoria a la vista</div>
+                </div>
+              </div>
+              <div class="a-feat">
+                <div class="a-feat-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </div>
+                <div>
+                  <div class="a-feat-title">CTA siempre cerca</div>
+                  <div class="a-feat-sub">Contacto y WhatsApp siempre a la mano</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="a-bottom-steps">
+          <div class="a-bs-intro">
+            <div class="a-bs-intro-tag">Una oferta mejor presentada</div>
+            <div class="a-bs-intro-txt">Lo complejo se vuelve elegible.</div>
+          </div>
+          <div class="a-bs-div"></div>
+          <div class="a-bs-steps">
+            <div class="a-bs-step">
+              <div class="a-bs-num">01</div>
+              <div class="a-bs-title">Autos</div>
+              <div class="a-bs-sub">Todo para moverte seguro</div>
+            </div>
+            <div class="a-bs-step">
+              <div class="a-bs-num">02</div>
+              <div class="a-bs-title">Personas</div>
+              <div class="a-bs-sub">Vida, salud y hogar</div>
+            </div>
+            <div class="a-bs-step">
+              <div class="a-bs-num">03</div>
+              <div class="a-bs-title">Empresas</div>
+              <div class="a-bs-sub">Coberturas para crecer</div>
+            </div>
+          </div>
+        </div>
+        <div class="a-footer-line">Variedad sin ruido visual</div>
       </div>
     </div>
   </div>
   <div class="asset-footer">
     <div class="asset-meta">
-      <div class="asset-meta-name">Slide 04 — CTA</div>
+      <div class="asset-meta-name">Slide 04 — Catálogo UX</div>
       <div class="asset-meta-size">1080 × 1080 px</div>
     </div>
-    <button class="dl-btn" onclick="dl('a4','rmkt-aiser-04-cta.png',this)">Descargar PNG</button>
+    <button class="dl-btn" onclick="dl('a4','rmkt-aiser-04-catalogo.png',this)">Descargar PNG</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     STORY · 1080 × 1920 px
-══════════════════════════════════════════ -->
+<!-- ══════════════════ STORY 1080×1920 ══════════════════ -->
 <div class="sec-label" style="margin-top:20px;">
   <h2>Story · 1080 × 1920 px</h2>
   <div class="sec-line"></div>
 </div>
 
-<!-- ── STORY 1 — REVEAL ── -->
+<!-- ── STORY — LEAD FLOW ── -->
 <div class="asset-card">
   <div class="asset-preview" id="prev5">
     <div class="scaler" id="sc5">
       <div id="s1">
-        <div class="dg"></div>
-        <div class="ga"></div>
-        <div class="gb"></div>
-        <div class="cb cb-tl"></div>
-        <div class="cb cb-tr"></div>
-        <div class="cb cb-bl"></div>
-        <div class="cb cb-br"></div>
+        <div class="dg"></div><div class="ga"></div><div class="gb"></div>
 
-        <!-- Top section -->
-        <div class="s-top">
-          <img class="s-logo" src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous">
-          <div class="s-badge">Nuevo proyecto</div>
-          <div class="s-eyebrow">AISER Seguros · 38 años de experiencia</div>
-          <div class="s-hl">
-            <span class="hl-w">Diseño web</span>
-            <span class="hl-g">que convierte.</span>
-          </div>
-          <p class="s-sub">Desarrollamos su presencia digital completa<br>desde cero. HTML · CSS · JS · EmailJS.</p>
+        <div class="a-topbar">
+          <img class="a-logo" src="../Logo RMKT transparente reducido.png" alt="RMKT" crossorigin="anonymous">
+          <span class="a-agency">Diseño UX/UI + Desarrollo Web / RMKT</span>
         </div>
 
-        <!-- Divider -->
+        <div class="a-tags" style="top:104px;">
+          <div class="a-tag g">Lead Flow</div>
+          <div class="a-tag">Conversión directa</div>
+        </div>
+
+        <!-- Hero section -->
+        <div class="s-hero">
+          <div class="s-badge">Contacto que convierte</div>
+          <div class="s-eyebrow">AISER Seguros · Cotización sin fricción</div>
+          <div class="s-hl">
+            <span class="hl-w">Cotizar ya no</span>
+            <span class="hl-g">se siente pesado.</span>
+          </div>
+          <p class="s-sub">Tres rutas para llegar a un asesor sin vueltas.</p>
+        </div>
+
         <div class="s-div"></div>
 
-        <!-- Mid section — mockups -->
-        <div class="s-mid">
-          <div class="s-browser browser">
-            <div class="browser-chrome">
-              <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
-              <div class="browser-url">aiserseguros.com</div>
-            </div>
-            <div class="browser-body">
-              <img src="../Inicio SS.png" crossorigin="anonymous" alt="AISER Seguros">
-            </div>
+        <!-- Mockup -->
+        <div class="s-mockup browser">
+          <div class="browser-chrome">
+            <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
+            <div class="browser-url">aiserseguros.com/contacto</div>
           </div>
-          <div class="s-phone">
-            <div class="phone">
-              <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <img src="../ss movil.png" crossorigin="anonymous" alt="AISER móvil">
-              </div>
-            </div>
+          <div class="browser-body">
+            <img src="../Contacto ss.png" alt="AISER Contacto" crossorigin="anonymous">
           </div>
         </div>
 
-        <!-- Divider 2 -->
         <div class="s-div2"></div>
 
-        <!-- Bottom section -->
+        <!-- Bottom -->
         <div class="s-bot">
           <div class="s-feat-pills">
-            <div class="s-fp">Responsive</div>
-            <div class="s-fp">WhatsApp</div>
-            <div class="s-fp">EmailJS</div>
-            <div class="s-fp">Carrusel</div>
-            <div class="s-fp">Motion.js</div>
-            <div class="s-fp">Código limpio</div>
+            <div class="s-fp">Formulario</div>
+            <div class="s-fp">WhatsApp directo</div>
+            <div class="s-fp">Ruta rápida</div>
+            <div class="s-fp">Sin pasos extra</div>
+            <div class="s-fp">Siempre visible</div>
           </div>
           <div class="s-cta-card">
             <div class="s-cta-hl">¿Tu negocio también lo necesita?</div>
@@ -872,12 +787,13 @@ body {
           </div>
           <div class="s-handle">@ramos_mkt.rex</div>
         </div>
+        <div class="a-footer-line">Menos fricción, más conversaciones</div>
       </div>
     </div>
   </div>
   <div class="asset-footer">
     <div class="asset-meta">
-      <div class="asset-meta-name">Story 01 — Reveal</div>
+      <div class="asset-meta-name">Story 01 — Lead Flow</div>
       <div class="asset-meta-size">1080 × 1920 px</div>
     </div>
     <button class="dl-btn" onclick="dl('s1','rmkt-aiser-story-01.png',this)">Descargar PNG</button>
@@ -891,7 +807,6 @@ body {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-  /* ── Scalers ── */
   const ASSETS = [
     { sc:'sc1', prev:'prev1', w:1080, h:1080, mw:540 },
     { sc:'sc2', prev:'prev2', w:1080, h:1080, mw:540 },
@@ -915,7 +830,6 @@ body {
   initScalers();
   window.addEventListener('resize', initScalers);
 
-  /* ── Wait for images ── */
   function waitImages(assetId) {
     const imgs = document.querySelectorAll('#' + assetId + ' img');
     return Promise.all([...imgs].map(img =>
@@ -924,7 +838,6 @@ body {
     ));
   }
 
-  /* ── Download single ── */
   async function dl(assetId, filename, btn) {
     btn.textContent = 'Generando…'; btn.disabled = true;
     try {
@@ -942,15 +855,14 @@ body {
     btn.textContent = 'Descargar PNG'; btn.disabled = false;
   }
 
-  /* ── Download all ── */
   async function dlAll() {
     const btn = document.getElementById('dlAllBtn');
     btn.disabled = true;
     const tasks = [
-      ['a1','rmkt-aiser-01-hook.png'],
-      ['a2','rmkt-aiser-02-showcase.png'],
-      ['a3','rmkt-aiser-03-features.png'],
-      ['a4','rmkt-aiser-04-cta.png'],
+      ['a1','rmkt-aiser-01-caso.png'],
+      ['a2','rmkt-aiser-02-problema.png'],
+      ['a3','rmkt-aiser-03-resultados.png'],
+      ['a4','rmkt-aiser-04-catalogo.png'],
       ['s1','rmkt-aiser-story-01.png'],
     ];
     for (const [id, name] of tasks) {
