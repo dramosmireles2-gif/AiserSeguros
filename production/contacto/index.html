@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/inner-page.css" />
   <link rel="stylesheet" href="../css/mobile.css" />
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -267,10 +269,33 @@
   <script src="../js/main.js"></script>
   <script type="module" src="../js/animations.js"></script>
   <script>
+    const EMAILJS_PUBLIC_KEY = 'BpDWZbmjKnOr3KvJa';
+    const EMAILJS_SERVICE_ID = 'service_01xmx0h';
+    const EMAILJS_TEMPLATE_ID = 'template_l0yw94s'; // asegúrate de que este template tenga {{nombre}}, {{email}}, {{mensaje}}
+
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      this.classList.add('hidden');
-      document.getElementById('contactSuccess').classList.remove('hidden');
+
+      const form = this;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando…';
+
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+        .then(function () {
+          form.classList.add('hidden');
+          document.getElementById('contactSuccess').classList.remove('hidden');
+        })
+        .catch(function (err) {
+          console.error('EmailJS error:', err);
+          alert('Hubo un problema al enviar el mensaje. Por favor intenta de nuevo o escríbenos por WhatsApp.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        });
     });
   </script>
 </body>
